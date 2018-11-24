@@ -1,0 +1,24 @@
+{
+  "name": "reactjsmentoringprogram2018",
+  "version": "1.0.0",
+  "description": "ReactJS Mentoring Program",
+  "entry point": "srcServer.js",
+  "main": "script.js",
+  "scripts": {
+    "start": "node buildScripts/srcServer.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nkorczyk/ReactJSTraining.git"
+  },
+  "author": "Norbert Korczyk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nkorczyk/ReactJSTraining/issues"
+  },
+  "homepage": "https://github.com/nkorczyk/ReactJSTraining#readme",
+  "devDependencies": {
+    "express": "4.14.0",
+    "open": "0.0.5"
+  }
+}
