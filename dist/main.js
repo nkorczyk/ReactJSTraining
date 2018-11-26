@@ -19154,57 +19154,57 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var element = _react2.default.createElement("h1", {}, "Hello World");
 
 var FunctionalHello = function FunctionalHello() {
-    return _react2.default.createElement(
-        'h1',
-        null,
-        'Hello World'
-    );
+  return _react2.default.createElement(
+    'h1',
+    null,
+    'Hello World'
+  );
 };
 
 var ClassHello = function (_React$Component) {
-    _inherits(ClassHello, _React$Component);
+  _inherits(ClassHello, _React$Component);
 
-    function ClassHello() {
-        _classCallCheck(this, ClassHello);
+  function ClassHello() {
+    _classCallCheck(this, ClassHello);
 
-        return _possibleConstructorReturn(this, (ClassHello.__proto__ || Object.getPrototypeOf(ClassHello)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (ClassHello.__proto__ || Object.getPrototypeOf(ClassHello)).apply(this, arguments));
+  }
+
+  _createClass(ClassHello, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'h1',
+        null,
+        'Hello World'
+      );
     }
+  }]);
 
-    _createClass(ClassHello, [{
-        key: 'render',
-        value: function render() {
-            return _react2.default.createElement(
-                'h1',
-                null,
-                'Hello World'
-            );
-        }
-    }]);
-
-    return ClassHello;
+  return ClassHello;
 }(_react2.default.Component);
 
 var PureHello = function (_React$PureComponent) {
-    _inherits(PureHello, _React$PureComponent);
+  _inherits(PureHello, _React$PureComponent);
 
-    function PureHello() {
-        _classCallCheck(this, PureHello);
+  function PureHello() {
+    _classCallCheck(this, PureHello);
 
-        return _possibleConstructorReturn(this, (PureHello.__proto__ || Object.getPrototypeOf(PureHello)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (PureHello.__proto__ || Object.getPrototypeOf(PureHello)).apply(this, arguments));
+  }
+
+  _createClass(PureHello, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'h1',
+        null,
+        'Hello World'
+      );
     }
+  }]);
 
-    _createClass(PureHello, [{
-        key: 'render',
-        value: function render() {
-            return _react2.default.createElement(
-                'h1',
-                null,
-                'Hello World'
-            );
-        }
-    }]);
-
-    return PureHello;
+  return PureHello;
 }(_react2.default.PureComponent);
 
 var root = _react2.default.createElement("div", {}, element, _react2.default.createElement(FunctionalHello, null), _react2.default.createElement(ClassHello, null), _react2.default.createElement(PureHello, null));

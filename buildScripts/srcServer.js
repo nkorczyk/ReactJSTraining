@@ -5,11 +5,7 @@ import open from 'open';
 const port = 3000;
 const app = express();
 
-// app.use(express.static('src'));
-
-app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname + 'index.html'));
-});
+app.use(express.static('dist'));
 
 app.listen(port, function (err) {
   if (err) {

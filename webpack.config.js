@@ -3,7 +3,7 @@ const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = function (env, options) {
-  const isProduction = options.mode === "production";
+  const isProduction = process.env.NODE_ENV === "production";
 
   const config = {
     context: path.join(__dirname, "src"),
