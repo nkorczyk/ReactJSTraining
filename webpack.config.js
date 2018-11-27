@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = function (env, options) {
-  const isProduction = process.env.NODE_ENV === "production";
+  const isProduction = env === "prod";
 
   const config = {
     context: path.join(__dirname, "src"),
@@ -27,7 +27,12 @@ module.exports = function (env, options) {
           test: /\.css$/,
           use: ExtractTextPlugin.extract({
             fallback: "style-loader",
-            use: "css-loader"
+            use: [
+              {
+                loader: 'css-loader',
+                options: isProduction ? { minimize: true } : {}
+              }
+            ]
           })
         }
       ]
@@ -37,6 +42,18 @@ module.exports = function (env, options) {
       new HtmlWebpackPlugin({
         title: "ReactJS Mentoring Program",
         hash: true,
+        minify: isProduction ? {
+          removeComments: true,
+          collapseWhitespace: true,
+          removeRedundantAttributes: true,
+          useShortDoctype: true,
+          removeEmptyAttributes: true,
+          removeStyleLinkTypeAttributes: true,
+          keepClosingSlash: true,
+          minifyJS: true,
+          minifyCSS: true,
+          minifyURLs: true
+        } : {},
         template: path.resolve(__dirname, "./index.html")
       }),
       new ExtractTextPlugin("[name].css")
