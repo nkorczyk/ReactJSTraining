@@ -19143,6 +19143,8 @@ var _reactDom = __webpack_require__(/*! react-dom */ "../node_modules/react-dom/
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
+__webpack_require__(/*! ./style.css */ "./style.css");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -19151,12 +19153,12 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var element = _react2.default.createElement("h1", {}, "Hello World");
+var element = _react2.default.createElement("h1", { className: "red_hello" }, "Hello World");
 
 var FunctionalHello = function FunctionalHello() {
   return _react2.default.createElement(
     'h1',
-    null,
+    { className: 'blue_hello' },
     'Hello World'
   );
 };
@@ -19210,6 +19212,17 @@ var PureHello = function (_React$PureComponent) {
 var root = _react2.default.createElement("div", {}, element, _react2.default.createElement(FunctionalHello, null), _react2.default.createElement(ClassHello, null), _react2.default.createElement(PureHello, null));
 
 _reactDom2.default.render(root, document.getElementById("root"));
+
+/***/ }),
+
+/***/ "./style.css":
+/*!*******************!*\
+  !*** ./style.css ***!
+  \*******************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 
