@@ -30,7 +30,7 @@ module.exports = function (env, options) {
             use: [
               {
                 loader: 'css-loader',
-                options: isProduction ? { minimize: true } : {}
+                options: { minimize: isProduction }
               }
             ]
           })
