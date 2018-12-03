@@ -1,7 +1,7 @@
 import React from 'react';
 import Title from './Title';
 
-const Wrapper = () => {
+const Header = () => {
   return (
     <div className="wrapper">
       <Title />
@@ -10,11 +10,12 @@ const Wrapper = () => {
       <div>
         <h6 className="white-text text-darken-2 left">SEARCH BY</h6>
         <button className="red lighten-1 btn button1">TITLE</button>
-        <button className="red lighten-1 btn button1">GENRE</button>
+        <button className="grey darken-2 btn button1">GENRE</button>
         <button className="red lighten-1 btn right">SEARCH</button>
       </div>
+
     </div>
   )
 }
 
-export default Wrapper;
+export default Header;

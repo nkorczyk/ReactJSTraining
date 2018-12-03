@@ -74,23 +74,22 @@ const movies_data = {
       "runtime": 134
     },
     {
-      "id": 354912,
-      "title": "Coco",
-      "tagline": "The celebration of a lifetime",
-      "vote_average": 7.8,
-      "vote_count": 3619,
-      "release_date": "2017-10-27",
-      "poster_path": "https://image.tmdb.org/t/p/w500/eKi8dIrr8voobbaGzDpe8w0PVbC.jpg",
-      "overview": "Despite his family’s baffling generations-old ban on music, Miguel dreams of becoming an accomplished musician like his idol, Ernesto de la Cruz. Desperate to prove his talent, Miguel finds himself in the stunning and colorful Land of the Dead following a mysterious chain of events. Along the way, he meets charming trickster Hector, and together, they set off on an extraordinary journey to unlock the real story behind Miguel's family history.",
-      "budget": 175000000,
-      "revenue": 700920729,
+      "id": 399055,
+      "title": "The Shape of Water",
+      "tagline": "A Fairy Tale for Troubled Times",
+      "vote_average": 7.3,
+      "vote_count": 3200,
+      "release_date": "2017-12-01",
+      "poster_path": "https://image.tmdb.org/t/p/w500/k4FwHlMhuRR5BISY2Gm2QZHlH5Q.jpg",
+      "overview": "An other-worldly story, set against the backdrop of Cold War era America circa 1962, where a mute janitor working at a lab falls in love with an amphibious man being held captive there and devises a plan to help him escape.",
+      "budget": 19500000,
+      "revenue": 185545281,
       "genres": [
-        "Adventure",
-        "Comedy",
-        "Family",
-        "Animation"
+        "Drama",
+        "Fantasy",
+        "Romance"
       ],
-      "runtime": 105
+      "runtime": 123
     },
     {
       "id": 333339,

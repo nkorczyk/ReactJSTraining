@@ -9,7 +9,7 @@ const Content = ({ movies }) => {
       );
     })
   ) : (
-      <div className="no-found">
+      <div className="not-found">
         <h3 className="content-list">No Films found</h3>
       </div>
     );
