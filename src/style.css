@@ -1,7 +1,106 @@
-.red_hello {
-    color: red;
+body {
+    background: #e0e0e0;
 }
 
-.blue_hello {
-    color: blue;
+.main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0px;
+}
+
+.wrapper {
+    background-image: url('./assets/background-netflix.jpg');
+    background-repeat: no-repeat;
+    background-size: 800px 400px;
+    max-width: 800px;
+    /* margin: 0 auto -30px auto; */
+    margin: 0 auto;
+    padding: 1px 55px 10px 55px;
+}
+
+h5 {
+    padding: 0px;
+    margin: 0px;
+}
+
+h6 {
+    padding-right: 4px;
+    padding-top: 4px;
+    
+}
+
+h3 {
+    text-align: center;
+}
+
+.list {
+    display: grid;
+    grid-template-columns: 256px 256px 256px;
+    grid-gap: 10px;
+    background: #fff;
+    margin: 0 auto;
+    padding: 5px 5px;
+    max-width: 800px;   
+}
+
+.no-found {
+    background: #fff;
+    margin: 0 auto;
+    max-width: 800px;
+    max-height: 200px;
+}
+
+.list2 {
+    background: #fff;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.grey1 {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 15px 15px;
+    margin: 0px;
+}
+
+.content-list {
+    padding: 80px;
+    margin: 0 auto;
+}
+
+.button1 {
+    margin: 0 5px;
+    
+}
+
+.thumbnails {
+    display: block;
+    width: 256px;
+}
+
+.movie-title {
+    float: left;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 2px 2px;
+}
+
+.release-date {
+    float: right;
+    font-size: 10px;
+}
+
+/* .details {
+    overflow: hidden;
+} */
+
+.details:after {
+    display: block;
+    content: "";
+    clear: both;
+}
+
+.genre {
+    padding-top: 0;
+    font-size: 12px;
 }
