@@ -111,3 +111,27 @@ list2::after{
 .genre {
   font-size: 10px;
 }
+
+.msg {
+    width:100%;
+    border: 1px solid;
+    padding:10px;
+    margin: 20px;
+    color: grey;
+  }
+
+.msg-error {
+    position:absolute; 
+    top:0; 
+    right:0;
+    bottom:0;
+    left:0; 
+    margin:auto;
+    max-width:200px;
+    max-height:70px;
+    overflow:auto;
+    text-align: center;
+    border-color: #d32f2f;
+    background-color: #ef5350;
+    color: white;
+}
