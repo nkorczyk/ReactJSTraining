@@ -1,8 +1,10 @@
 import React from 'react';
 import Item from './Item';
+import CONSTANTS from '../constants/constants';
 
 const Content = ({ movies }) => {
-  const movieslength = movies.length ? (
+  const moviesLength = movies.length;
+  const moviesList = moviesLength ? (
     movies.map(movie => {
       return (
         <Item movie={movie} key={movie.id} />
@@ -10,13 +12,13 @@ const Content = ({ movies }) => {
     })
   ) : (
       <div className="not-found">
-        <h3 className="content-list">No Films found</h3>
+        <h3 className="not-found-message">{CONSTANTS.NO_FILMS_FOUND}</h3>
       </div>
     );
 
   return (
-    <div className="list">
-      {movieslength}
+    <div className={moviesLength ? "movies-list" : ""}>
+      {moviesList}
     </div>
   )
 }

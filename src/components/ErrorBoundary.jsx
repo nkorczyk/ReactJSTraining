@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import CONSTANTS from '../constants/constants';
 
 class ErrorBoundary extends Component {
   state = {
@@ -18,9 +19,7 @@ class ErrorBoundary extends Component {
   render() {
     if (this.state.hasError) {
       return (
-        <div className="msg msg-error z-depth-3">
-          Error occurred while fetching the data!
-      </div>
+        <div className="msg msg-error z-depth-3">{CONSTANTS.ERROR}</div>
       );
     }
     return this.props.children;

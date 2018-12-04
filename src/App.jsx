@@ -7,10 +7,22 @@ import Results from './components/Results';
 import Content from './components/Content';
 import Footer from './components/Footer';
 import ErrorBoundary from './components/ErrorBoundary';
-import movies_data from './movies_data';
+import axios from 'axios';
 
 class App extends Component {
-  state = movies_data;
+  state = {
+    data: []
+  };
+
+  componentDidMount() {
+    axios.get('http://react-cdp-api.herokuapp.com/movies')
+      .then(response => {
+        this.setState({
+          data: response.data.data.slice(0, 9)
+        });
+      });
+  }
+
   render() {
     return (
       <React.Fragment>
@@ -18,7 +30,7 @@ class App extends Component {
         <Results />
         <ErrorBoundary>
           <Content movies={this.state.data} />
-        </ErrorBoundary>,
+        </ErrorBoundary>
         <Footer />
       </React.Fragment>
     );
