@@ -7,7 +7,7 @@ const CONSTANTS = {
   TITLE: "TITLE",
   GENRE: "GENRE",
   SEARCH: "SEARCH",
-  MOVIES_FOUND: "9 movies found",
+  MOVIES_FOUND: "movies found",
   RATING: "rating",
   RELEASE: "release date",
   SORT: "Sort by",

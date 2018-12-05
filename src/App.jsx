@@ -2,11 +2,8 @@ import React, { Component } from 'react';
 import './style.css';
 import 'materialize-css';
 import 'materialize-css/dist/css/materialize.min.css';
-import Header from './components/Header';
-import Results from './components/Results';
-import Content from './components/Content';
-import Footer from './components/Footer';
-import ErrorBoundary from './components/ErrorBoundary';
+import SearchPage from './components/SearchPage';
+import MoviePage from './components/MoviePage';
 import axios from 'axios';
 
 class App extends Component {
@@ -15,7 +12,6 @@ class App extends Component {
   };
 
   refreshResults = (searchStr) => {
-    console.log(searchStr);
     axios.get(searchStr)
       .then(response => {
         this.setState({
@@ -27,12 +23,8 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
-        <Header refreshResults={this.refreshResults} />
-        <Results />
-        <ErrorBoundary>
-          <Content movies={this.state.data} />
-        </ErrorBoundary>
-        <Footer />
+        <SearchPage movies={this.state.data} refreshResults={this.refreshResults} />
+        {/* <MoviePage movies={this.state.data}/> */}
       </React.Fragment>
     );
   }
