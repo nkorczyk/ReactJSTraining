@@ -11,14 +11,15 @@ import axios from 'axios';
 
 class App extends Component {
   state = {
-    data: []
+    data: [],
   };
 
-  componentDidMount() {
-    axios.get('http://react-cdp-api.herokuapp.com/movies')
+  refreshResults = (searchStr) => {
+    console.log(searchStr);
+    axios.get(searchStr)
       .then(response => {
         this.setState({
-          data: response.data.data.slice(0, 9)
+          data: response.data.data
         });
       });
   }
@@ -26,7 +27,7 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
-        <Header />
+        <Header refreshResults={this.refreshResults} />
         <Results />
         <ErrorBoundary>
           <Content movies={this.state.data} />
