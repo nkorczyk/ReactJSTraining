@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import CONSTANTS from '../constants/constants';
 
 const Results = ({ items }) => {
@@ -11,5 +12,9 @@ const Results = ({ items }) => {
     </div>
   )
 }
+
+Results.propTypes = {
+  movie: PropTypes.number
+};
 
 export default Results;

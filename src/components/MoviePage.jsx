@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Results from './Results';
 import Content from './Content';
 import Footer from './Footer';
@@ -14,5 +15,9 @@ const SearchPage = ({ movies }) => {
     </div>
   )
 }
+
+SearchPage.propTypes = {
+  movie: PropTypes.object
+};
 
 export default SearchPage;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import CONSTANTS from '../constants/constants';
 
 const MovieDetails = ({ movie }) => {
@@ -20,11 +21,15 @@ const MovieDetails = ({ movie }) => {
         <p className="white-text text-darken-2">{movie.overview}</p>
       </div>
     </div>
-  ) : (<div></div>);
+  ) : null;
 
   return (
     <div>{MovieDetails}</div>
   )
 }
+
+MovieDetails.propTypes = {
+  movie: PropTypes.object
+};
 
 export default MovieDetails;

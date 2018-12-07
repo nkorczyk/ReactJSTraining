@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Header from './Header';
 import Results from './Results';
 import Content from './Content';
@@ -17,5 +18,10 @@ const SearchPage = ({ movies, refreshResults }) => {
     </div>
   )
 }
+
+Content.propTypes = {
+  movies: PropTypes.array,
+  refreshResults: PropTypes.func
+};
 
 export default SearchPage;

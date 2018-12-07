@@ -11,8 +11,8 @@ class App extends Component {
     data: [],
   };
 
-  refreshResults = (searchStr) => {
-    axios.get(searchStr)
+  refreshResults = (url) => {
+    axios.get(url)
       .then(response => {
         this.setState({
           data: response.data.data

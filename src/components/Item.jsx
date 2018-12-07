@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Item = ({ movie }) => {
   const genres = movie.genres.join(" & ");
@@ -14,5 +15,9 @@ const Item = ({ movie }) => {
     </div>
   )
 }
+
+Item.propTypes = {
+  movie: PropTypes.object
+};
 
 export default Item;

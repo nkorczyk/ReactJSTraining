@@ -1,26 +1,21 @@
 import React from 'react';
-import Item from './Item';
+import PropTypes from 'prop-types';
+import MoviesList from './MoviesList';
+import ErrorMessage from './ErrorMessage';
 import CONSTANTS from '../constants/constants';
 
 const Content = ({ movies }) => {
-  const moviesLength = movies.length;
-  const moviesList = moviesLength ? (
-    movies.map(movie => {
-      return (
-        <Item movie={movie} key={movie.id} />
-      );
-    })
-  ) : (
-      <div className="not-found">
-        <h3 className="not-found-message">{CONSTANTS.NO_FILMS_FOUND}</h3>
-      </div>
-    );
-
+  const moviesFound = movies.length > 0;
   return (
-    <div className={moviesLength ? "movies-list" : ""}>
-      {moviesList}
-    </div>
+    <React.Fragment>
+      {moviesFound && <MoviesList movies={movies} />}
+      {!moviesFound && <ErrorMessage message={CONSTANTS.NO_FILMS_FOUND} />}
+    </React.Fragment>
   )
 }
+
+Content.propTypes = {
+  movies: PropTypes.array
+};
 
 export default Content;

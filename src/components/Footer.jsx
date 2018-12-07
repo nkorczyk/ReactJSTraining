@@ -3,9 +3,9 @@ import CONSTANTS from '../constants/constants';
 
 const Footer = () => {
   return (
-    <div className="bar">
+    <footer className="bar">
       <h5 className="red-text text-darken-2 grey darken-3 grey-bar">{CONSTANTS.NETFLIX}</h5>
-    </div>
+    </footer>
   )
 }
 
