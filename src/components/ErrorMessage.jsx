@@ -8,7 +8,7 @@ const ErrorMessage = ({ message }) => (
 );
 
 ErrorMessage.propTypes = {
-  movies: PropTypes.string
+  message: PropTypes.string
 };
 
 export default ErrorMessage;

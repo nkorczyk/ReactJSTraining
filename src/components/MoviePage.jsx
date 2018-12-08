@@ -17,7 +17,7 @@ const SearchPage = ({ movies }) => {
 }
 
 SearchPage.propTypes = {
-  movie: PropTypes.object
+  movies: PropTypes.object
 };
 
 export default SearchPage;

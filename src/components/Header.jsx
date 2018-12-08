@@ -20,9 +20,9 @@ class Header extends Component {
   }
 
   refreshResults = () => {
-    const searchByTitleOrGenre = this.state.searchBy;
+    const searchBy = this.state.searchBy;
     const base = "http://react-cdp-api.herokuapp.com/movies";
-    const url = `${base}?search=${this.state.searchStr}&searchBy=${searchByTitleOrGenre}`;
+    const url = `${base}?search=${this.state.searchStr}&searchBy=${searchBy}`;
     this.props.refreshResults(url);
   }
 
@@ -39,14 +39,16 @@ class Header extends Component {
   }
 
   render() {
-    const titleClass = classNames({
-      "red lighten-1 btn buttons": this.state.searchBy === "title",
-      "grey lighten-1 btn buttons": this.state.searchBy === "genre"
+    const { searchBy } = this.state;
+
+    const titleClass = classNames('lighten-1 btn buttons', {
+      'red': searchBy === "title",
+      'grey': searchBy === "genre",
     });
 
-    const genreClass = classNames({
-      "red lighten-1 btn buttons": this.state.searchBy === "genre",
-      "grey lighten-1 btn buttons": this.state.searchBy === "title"
+    const genreClass = classNames('lighten-1 btn buttons', {
+      'red': searchBy === "genre",
+      'grey': searchBy === "title",
     });
 
     return (
