@@ -20,9 +20,8 @@ class Header extends Component {
   }
 
   refreshResults = () => {
-    const searchBy = this.state.searchBy;
     const base = "http://react-cdp-api.herokuapp.com/movies";
-    const url = `${base}?search=${this.state.searchStr}&searchBy=${searchBy}`;
+    const url = `${base}?search=${this.state.searchStr}&searchBy=${this.state.searchBy}`;
     this.props.refreshResults(url);
   }
 
