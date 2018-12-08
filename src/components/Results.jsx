@@ -14,7 +14,7 @@ const Results = ({ items }) => {
 }
 
 Results.propTypes = {
-  movie: PropTypes.number
+  items: PropTypes.number
 };
 
 export default Results;
