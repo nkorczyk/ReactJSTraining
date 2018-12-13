@@ -62,7 +62,7 @@ class Header extends Component {
             onClick={this.handleSearchByClick}>{CONSTANTS.TITLE}</button>
           <button id="genre" className={genreClass}
             onClick={this.handleSearchByClick}>{CONSTANTS.GENRE}</button>
-          <button className="red lighten-1 btn right"
+          <button id="search" className="red lighten-1 btn right"
             onClick={this.handleSearch}>{CONSTANTS.SEARCH}</button>
         </div>
       </header>

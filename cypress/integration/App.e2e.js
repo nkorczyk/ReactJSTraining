@@ -1,5 +1,8 @@
 describe('App E2E', () => {
-  it('should assert that true is equal to true', () => {
-    expect(true).to.equal(true);
+  it('should have a header', () => {
+    cy.visit('/');
+
+    cy.get('h4')
+      .should('have.text', 'FIND YOUR MOVIE');
   });
 });

@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer component Snapshot test with default props 1`] = `
+<footer
+  className="bar"
+>
+  <h5
+    className="red-text text-darken-2 grey darken-3 grey-bar"
+  >
+    netflixroulette
+  </h5>
+</footer>
+`;
+
+exports[`Renders Footer component 1`] = `
+<footer
+  className="bar"
+>
+  <h5
+    className="red-text text-darken-2 grey darken-3 grey-bar"
+  >
+    netflixroulette
+  </h5>
+</footer>
+`;

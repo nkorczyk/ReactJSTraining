@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ErrorBoundary Component Snapshot test with default props 1`] = `
+<div>
+  custom content
+</div>
+`;
