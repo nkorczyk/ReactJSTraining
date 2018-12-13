@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import TestRenderer from 'react-test-renderer';
 import { mount } from 'enzyme';
-import fetchMock from 'fetch-mock';
 import App from "../src/App";
 
 it('should render without crashing', () => {
