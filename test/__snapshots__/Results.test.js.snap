@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render Footer component Snapshot test with default props 1`] = `
+exports[`should render Results component Snapshot test with default props 1`] = `
 <Results
   items={10}
 >
