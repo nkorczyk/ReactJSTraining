@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import TestRenderer from 'react-test-renderer';
-import { mount } from 'enzyme';
+import { mount, shallow } from 'enzyme';
+import axios from 'axios';
+import MockAdapter from 'axios-mock-adapter';
 import App from "../src/App";
 
 it('should render without crashing', () => {
@@ -22,5 +24,26 @@ describe('should render App component', () => {
   const element = mount(<App />);
   test('Snapshot test with default props', () => {
     expect(element).toMatchSnapshot();
+  });
+});
+
+describe('should fetch data', () => {
+  it('should update state with response data', () => {
+    const url = 'http://react-cdp-api.herokuapp.com/movies?search=&searchBy=title';
+    const mock = new MockAdapter(axios);
+    mock
+      .onGet(url)
+      .reply(200, {
+        data: 'expected'
+      });
+
+    expect.assertions(1);
+
+    const component = shallow(<App />);
+    const instance = component.instance();
+
+    return instance.refreshResults(url).then(() => {
+      expect(component.state('data')).toEqual('expected');
+    });
   });
 });
