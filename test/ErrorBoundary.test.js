@@ -8,17 +8,20 @@ describe('ErrorBoundary Component', () => {
     element = shallow(<ErrorBoundary><div>custom content</div></ErrorBoundary>);
   });
 
-  test('Snapshot test with default props', () => {
+  it('should render ErrorBoundary component', () => {
     expect(element).toMatchSnapshot();
+  });
+
+  it('Snapshot test with default props', () => {
     expect(element.html()).toEqual('<div>custom content</div>');
   });
 
-  test('Should render error message when hasError is set in the state', () => {
+  it('Should render error message when hasError is set in the state', () => {
     element.setState({ hasError: true });
     expect(element.text()).toEqual('Error occurred while fetching the data!');
   });
 
-  test('Should update component state when componentDidCatch is invoked', () => {
+  it('Should update component state when componentDidCatch is invoked', () => {
     element.instance().componentDidCatch('error', 'error');
     expect(element.state('hasError')).toEqual(true);
   });

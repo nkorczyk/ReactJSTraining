@@ -1,15 +1,15 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import ErrorMessage from "../src/components/ErrorMessage";
 
 describe('should render ErrorMessage component', () => {
-  const element = mount(<ErrorMessage message="Test message" />);
-  test('Snapshot test with default props', () => {
+  const element = shallow(<ErrorMessage message="Test message" />);
+  it('Snapshot test with default props', () => {
     expect(element).toMatchSnapshot();
   });
 });
 
-test('should render error message', () => {
-  const element = mount(<ErrorMessage message="Test message" />);
+it('should render error message', () => {
+  const element = shallow(<ErrorMessage message="Test message" />);
   expect(element.text()).toEqual('Test message');
 });

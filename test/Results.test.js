@@ -4,12 +4,12 @@ import Results from "../src/components/Results";
 
 describe('should render Results component', () => {
   const element = mount(<Results items={10} />);
-  test('Snapshot test with default props', () => {
+  it('Snapshot test with default props', () => {
     expect(element).toMatchSnapshot();
   });
 });
 
-describe('should render Results component with 10 items', () => {
+describe('should display 10 movies found', () => {
   const element = mount(<Results items={10} />);
-  expect(element.prop('items')).toEqual(10);
+  expect(element.find('#moviesFound').text()).toEqual("10 movies found");
 });

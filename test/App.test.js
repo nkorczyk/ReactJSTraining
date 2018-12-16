@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import TestRenderer from 'react-test-renderer';
-import { mount, shallow } from 'enzyme';
+import { shallow } from 'enzyme';
 import axios from 'axios';
 import MockAdapter from 'axios-mock-adapter';
 import App from "../src/App";
@@ -13,17 +13,10 @@ it('should render without crashing', () => {
 });
 
 describe('App Snapshot', () => {
-  test('renders', () => {
+  it('renders', () => {
     const component = TestRenderer.create(<App />);
     let tree = component.toJSON();
     expect(tree).toMatchSnapshot();
-  });
-});
-
-describe('should render App component', () => {
-  const element = mount(<App />);
-  test('Snapshot test with default props', () => {
-    expect(element).toMatchSnapshot();
   });
 });
 
@@ -44,6 +37,10 @@ describe('should fetch data', () => {
 
     return instance.refreshResults(url).then(() => {
       expect(component.state('data')).toEqual('expected');
+      afterEach(() => {
+        mock.reset();
+        mock.restore();
+      });
     });
   });
 });
