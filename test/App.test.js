@@ -38,7 +38,6 @@ describe('should fetch data', () => {
     return instance.refreshResults(url).then(() => {
       expect(component.state('data')).toEqual('expected');
       afterEach(() => {
-        mock.reset();
         mock.restore();
       });
     });
