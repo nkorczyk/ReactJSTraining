@@ -9,7 +9,24 @@
     "open:src": "webpack-dev-server --hot --port 80",
     "build:dev": "webpack --env dev --progress --profile --colors",
     "build:prod": "webpack --env prod --progress --profile --colors",
-    "test": "jest"
+    "test": "set NODE_ENV=test&&jest --verbose",
+    "test:watch": "npm test --watch",
+    "test:coverage": "npm run test -- --coverage",
+    "test:e2e": "cypress open"
+  },
+  "jest": {
+    "setupFiles": [
+      "./test/jestsetup.js"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}"
+    ],
+    "moduleNameMapper": {
+      "^.+\\.(css|scss)$": "identity-obj-proxy"
+    },
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
   },
   "repository": {
     "type": "git",
@@ -35,6 +52,7 @@
   },
   "devDependencies": {
     "axios": "^0.18.0",
+    "axios-mock-adapter": "^1.15.0",
     "babel-core": "6.26.0",
     "babel-loader": "7.1.4",
     "babel-preset-env": "1.6.1",
@@ -43,10 +61,18 @@
     "babel-preset-react-hmre": "^1.1.1",
     "babel-preset-stage-2": "6.24.1",
     "css-loader": "0.28.11",
+    "cypress": "^3.1.3",
+    "enzyme": "^3.8.0",
+    "enzyme-adapter-react-16": "^1.7.1",
+    "enzyme-to-json": "^3.3.5",
+    "expect": "^23.6.0",
     "extract-text-webpack-plugin": "4.0.0-beta.0",
+    "fetch-mock": "^7.2.5",
     "html-webpack-plugin": "3.2.0",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^23.6.0",
     "open": "0.0.5",
+    "react-test-renderer": "^16.6.3",
     "style-loader": "0.20.3",
     "url-loader": "^1.1.2",
     "webpack": "4.6.0",

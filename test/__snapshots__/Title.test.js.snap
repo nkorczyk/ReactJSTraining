@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Title component Snapshot test with default props 1`] = `
+<Title>
+  <div>
+    <h5
+      className="red-text text-darken-2"
+    >
+      netflixroulette
+    </h5>
+  </div>
+</Title>
+`;

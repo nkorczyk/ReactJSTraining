@@ -1,0 +1,100 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App Snapshot renders 1`] = `
+<div>
+  <header
+    className="header"
+  >
+    <div>
+      <h5
+        className="red-text text-darken-2"
+      >
+        netflixroulette
+      </h5>
+    </div>
+    <h4
+      className="white-text text-darken-2"
+    >
+      FIND YOUR MOVIE
+    </h4>
+    <input
+      className="input-field white-text"
+      onChange={[Function]}
+      onKeyDown={[Function]}
+      placeholder="Enter the title"
+      type="text"
+    />
+    <div>
+      <h6
+        className="white-text text-darken-2 left"
+      >
+        SEARCH BY
+      </h6>
+      <button
+        className="lighten-1 btn buttons red"
+        id="title"
+        onClick={[Function]}
+      >
+        TITLE
+      </button>
+      <button
+        className="lighten-1 btn buttons grey"
+        id="genre"
+        onClick={[Function]}
+      >
+        GENRE
+      </button>
+      <button
+        className="red lighten-1 btn right"
+        id="search"
+        onClick={[Function]}
+      >
+        SEARCH
+      </button>
+    </div>
+  </header>
+  <div
+    className="bar grey lighten-1"
+  >
+    <h6
+      className="white-text text-darken-2 grey lighten-1 filter-bar left"
+      id="moviesFound"
+    >
+      0 movies found
+    </h6>
+    <h6
+      className="white-text text-darken-2 grey lighten-1 filter-bar right"
+    >
+      rating
+    </h6>
+    <h6
+      className="white-text text-darken-2 grey lighten-1 filter-bar right"
+    >
+      release date
+    </h6>
+    <h6
+      className="white-text text-darken-2 grey lighten-1 filter-bar right"
+    >
+      Sort by
+    </h6>
+  </div>
+  <div
+    className="not-found"
+  >
+    <h3
+      className="not-found-message"
+    >
+      No Films found
+    </h3>
+  </div>
+  <footer
+    className="bar"
+  >
+    <h5
+      className="red-text text-darken-2 grey darken-3 grey-bar"
+    >
+      netflixroulette
+    </h5>
+  </footer>
+</div>
+`;

@@ -12,7 +12,7 @@ class App extends Component {
   };
 
   refreshResults = (url) => {
-    axios.get(url)
+    return axios.get(url)
       .then(response => {
         this.setState({
           data: response.data.data
