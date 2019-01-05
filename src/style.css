@@ -191,3 +191,9 @@ bar:after {
   padding: 3px 7px;
   margin-left: 5px;
 }
+
+.button-as-text {
+  background:none;
+  border:none;
+  cursor: pointer;
+}

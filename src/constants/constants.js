@@ -10,7 +10,7 @@ const CONSTANTS = {
   MOVIES_FOUND: "movies found",
   RATING: "rating",
   RELEASE: "release date",
-  SORT: "Sort by",
+  SORT: "Sort by"
 }
 
 export default CONSTANTS;

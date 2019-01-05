@@ -1,20 +1,34 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { sortMovies } from '../actions/actionCreator';
+import { bindActionCreators } from 'redux';
 import CONSTANTS from '../constants/constants';
 
-const Results = ({ items }) => {
-  return (
-    <div className="bar grey lighten-1">
-      <h6 id="moviesFound" className="white-text text-darken-2 grey lighten-1 filter-bar left">{items + " " + CONSTANTS.MOVIES_FOUND}</h6>
-      <h6 className="white-text text-darken-2 grey lighten-1 filter-bar right">{CONSTANTS.RATING}</h6>
-      <h6 className="white-text text-darken-2 grey lighten-1 filter-bar right">{CONSTANTS.RELEASE}</h6>
-      <h6 className="white-text text-darken-2 grey lighten-1 filter-bar right">{CONSTANTS.SORT}</h6>
-    </div>
-  )
+class Results extends Component {
+
+  handleClick = (event) => {
+    this.props.sortMovies(event.target.id);
+  };
+
+  render() {
+    return (
+      <div className="bar grey lighten-1">
+        <h6 id="moviesFound"
+          className="white-text text-darken-2 grey lighten-1 filter-bar left">{this.props.items + " " + CONSTANTS.MOVIES_FOUND}</h6>
+        <button id="RATING" onClick={this.handleClick}
+          className="white-text text-darken-2 grey lighten-1 filter-bar right button-as-text">{CONSTANTS.RATING}</button>
+        <button id="DATE" onClick={this.handleClick}
+          className="white-text text-darken-2 grey lighten-1 filter-bar right button-as-text">{CONSTANTS.RELEASE}</button>
+        <h6 className="white-text text-darken-2 grey lighten-1 filter-bar right">{CONSTANTS.SORT}</h6>
+      </div>
+    )
+  }
 }
 
-Results.propTypes = {
-  items: PropTypes.number
-};
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({
+    sortMovies
+  }, dispatch);
+}
 
-export default Results;
+export default connect(null, mapDispatchToProps)(Results);

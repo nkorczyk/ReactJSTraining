@@ -6,11 +6,11 @@ import Content from './Content';
 import Footer from './Footer';
 import ErrorBoundary from './ErrorBoundary';
 
-const SearchPage = ({ movies, refreshResults }) => {
+const SearchPage = ({ movies, searchby, sortby }) => {
   return (
     <div>
-      <Header refreshResults={refreshResults} />
-      <Results items={movies.length} />
+      <Header searchby={searchby} />
+      <Results items={movies.length} sortby={sortby} />
       <ErrorBoundary>
         <Content movies={movies} />
       </ErrorBoundary>
@@ -21,7 +21,8 @@ const SearchPage = ({ movies, refreshResults }) => {
 
 Content.propTypes = {
   movies: PropTypes.array,
-  refreshResults: PropTypes.func
+  searchby: PropTypes.func,
+  sortby: PropTypes.func,
 };
 
 export default SearchPage;
