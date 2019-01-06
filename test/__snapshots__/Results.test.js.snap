@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Results should render Results component Snapshot test with default props 1`] = `
+<div
+  class="bar grey lighten-1"
+>
+  <h6
+    class="white-text text-darken-2 grey lighten-1 filter-bar left"
+    id="moviesFound"
+  >
+    10 movies found
+  </h6>
+  <button
+    class="white-text text-darken-2 grey lighten-1 filter-bar right button-as-text"
+    id="RATING"
+  >
+    rating
+  </button>
+  <button
+    class="white-text text-darken-2 grey lighten-1 filter-bar right button-as-text"
+    id="DATE"
+  >
+    release date
+  </button>
+  <h6
+    class="white-text text-darken-2 grey lighten-1 filter-bar right"
+  >
+    Sort by
+  </h6>
+</div>
+`;

@@ -1,28 +1,144 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render MoviesList component Snapshot test with default props 1`] = `
+exports[`MoviesList should rendered correctly with 5 movies 1`] = `
 <div
-  className="movies-list"
+  class="movies-list"
 >
-  <Item
-    key="321612"
-    movie={
-      Object {
-        "genres": Array [
-          "Family",
-          "Fantasy",
-          "Romance",
-        ],
-        "id": 321612,
-        "overview": "A live-action adaptation of Disney's version",
-        "poster_path": "https://image.tmdb.org/t/p/w500/tWqifoYuwLETmmasnGHO7xBjEtt.jpg",
-        "release_date": "2017-03-16",
-        "tagline": "Be our guest.",
-        "title": "Beauty and the Beast",
-        "vote_average": 6.8,
-        "vote_count": 7861,
-      }
-    }
-  />
+  <div>
+    <img
+      alt="Believing they have left behind shadowy figures from their past, newlyweds Christian and Ana fully embrace an inextricable connection and shared life of luxury. But just as she steps into her role as Mrs. Grey and he relaxes into an unfamiliar stability, new threats could jeopardize their happy ending before it even begins."
+      class="thumbnails"
+      src="https://image.tmdb.org/t/p/w500/3kcEGnYBHDeqmdYf8ZRbKdfmlUy.jpg"
+    />
+    <div
+      class="details"
+    >
+      <span
+        class="movie-title"
+      >
+        FIFTY SHADES FREED
+      </span>
+      <span
+        class="release-date"
+      >
+        2018-02-07
+      </span>
+    </div>
+    <span
+      class="genre"
+    >
+      Drama & Romance
+    </span>
+  </div>
+  <div>
+    <img
+      alt="Determined to prove herself, Officer Judy Hopps, the first bunny on Zootopia's police force, jumps at the chance to crack her first case - even if it means partnering with scam-artist fox Nick Wilde to solve the mystery."
+      class="thumbnails"
+      src="https://image.tmdb.org/t/p/w500/sM33SANp9z6rXW8Itn7NnG1GOEs.jpg"
+    />
+    <div
+      class="details"
+    >
+      <span
+        class="movie-title"
+      >
+        ZOOTOPIA
+      </span>
+      <span
+        class="release-date"
+      >
+        2016-02-11
+      </span>
+    </div>
+    <span
+      class="genre"
+    >
+      Animation & Adventure & Family & Comedy
+    </span>
+  </div>
+  <div>
+    <img
+      alt="Rey develops her newly discovered abilities with the guidance of Luke Skywalker, who is unsettled by the strength of her powers. Meanwhile, the Resistance prepares to do battle with the First Order."
+      class="thumbnails"
+      src="https://image.tmdb.org/t/p/w500/kOVEVeg59E0wsnXmF9nrh6OmWII.jpg"
+    />
+    <div
+      class="details"
+    >
+      <span
+        class="movie-title"
+      >
+        STAR WARS: THE LAST JEDI
+      </span>
+      <span
+        class="release-date"
+      >
+        2017-12-13
+      </span>
+    </div>
+    <span
+      class="genre"
+    >
+      Fantasy & Adventure & Science Fiction
+    </span>
+  </div>
+  <div>
+    <img
+      alt="King T'Challa returns home from America to the reclusive, technologically advanced African nation of Wakanda to serve as his country's new leader. However, T'Challa soon finds that he is challenged for the throne by factions within his own country as well as without.  Using powers reserved to Wakandan kings, T'Challa assumes the Black Panther mantel to join with girlfriend Nakia, the queen-mother, his princess-kid sister,  members of the Dora Milaje (the Wakandan \\"special forces\\"), and an American secret agent, to prevent Wakanda from being dragged into a world war."
+      class="thumbnails"
+      src="https://image.tmdb.org/t/p/w500/uxzzxijgPIY7slzFvMotPv8wjKA.jpg"
+    />
+    <div
+      class="details"
+    >
+      <span
+        class="movie-title"
+      >
+        BLACK PANTHER
+      </span>
+      <span
+        class="release-date"
+      >
+        2018-02-13
+      </span>
+    </div>
+    <span
+      class="genre"
+    >
+      Action & Adventure & Fantasy & Science Fiction
+    </span>
+  </div>
+  <div>
+    <img
+      alt="An other-worldly story, set against the backdrop of Cold War era America circa 1962, where a mute janitor working at a lab falls in love with an amphibious man being held captive there and devises a plan to help him escape."
+      class="thumbnails"
+      src="https://image.tmdb.org/t/p/w500/k4FwHlMhuRR5BISY2Gm2QZHlH5Q.jpg"
+    />
+    <div
+      class="details"
+    >
+      <span
+        class="movie-title"
+      >
+        THE SHAPE OF WATER
+      </span>
+      <span
+        class="release-date"
+      >
+        2017-12-01
+      </span>
+    </div>
+    <span
+      class="genre"
+    >
+      Drama & Fantasy & Romance
+    </span>
+  </div>
 </div>
+`;
+
+exports[`MoviesList should rendered correctly without any movie 1`] = `
+<div
+  class="movies-list"
+/>
 `;

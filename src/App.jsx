@@ -4,39 +4,20 @@ import 'materialize-css';
 import 'materialize-css/dist/css/materialize.min.css';
 import { loadMovies } from './actions/actionCreator';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import SearchPage from './components/SearchPage';
 import MoviePage from './components/MoviePage';
 
 class App extends Component {
 
-  async componentDidMount() {
-    await this.props.loadMovies();
-  };
-
-  moviesSorted = (movies, sortby) => {
-    const sortbyDateOrRating = {
-      'DATE': 'release_date',
-      'RATING': 'vote_average'
-    }[sortby];
-
-    const dataForSort = (data) => {
-      if (sortbyDateOrRating === 'release_date') {
-        return data.split('-').join('');
-      } else {
-        return data;
-      }
-    };
-
-    return movies.sort((a, b) => {
-      return dataForSort(b[sortbyDateOrRating]) - dataForSort(a[sortbyDateOrRating]);
-    });
+  componentDidMount() {
+    this.props.loadMovies();
   };
 
   render() {
     return (
       <React.Fragment>
-        <SearchPage movies={this.moviesSorted(this.props.movies, this.props.sortby)}
+        <SearchPage
+          movies={this.props.movies}
           searchby={this.props.searchby}
           sortby={this.props.sortby} />
         {/* <MoviePage movies={this.state.data}/> */}
@@ -45,15 +26,32 @@ class App extends Component {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({
-    loadMovies
-  }, dispatch);
-}
+const mapDispatchToProps = { loadMovies };
+
+const selectSortedMovies = (state) => {
+  const sortby = state.sortby;
+  const movies = state.movies.data;
+
+  const sortbyDateOrRating = {
+    DATE: "release_date",
+    RATING: "vote_average"
+  }[sortby];
+
+  const dataForSort = (data) => {
+    if (sortbyDateOrRating === "release_date") {
+      return data.split("-").join("");
+    }
+    return data;
+  };
+
+  return movies.sort((a, b) => {
+    return dataForSort(b[sortbyDateOrRating]) - dataForSort(a[sortbyDateOrRating]);
+  });
+};
 
 const mapStateToProps = (state) => {
   return {
-    movies: state.movies.data,
+    movies: selectSortedMovies(state),
     searchby: state.search.searchby,
     sortby: state.sortby
   };
