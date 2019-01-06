@@ -1,5 +1,5 @@
 import movies from '../src/reducers/movies';
-import ACTION_TYPES from '../src/actions/types'
+import ACTION_TYPES from '../src/actions/types';
 
 describe('Movies Reducer', () => {
   it('should return the expected state', () => {

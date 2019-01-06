@@ -1,5 +1,5 @@
 import sortby from '../src/reducers/sortby';
-import ACTION_TYPES from '../src/actions/types'
+import ACTION_TYPES from '../src/actions/types';
 
 describe('Sortby reducer', () => {
   it('should return the expected state', () => {

@@ -1,5 +1,5 @@
 import search from '../src/reducers/search';
-import ACTION_TYPES from '../src/actions/types'
+import ACTION_TYPES from '../src/actions/types';
 
 describe('Search reducer', () => {
   it('should return the expected state', () => {
