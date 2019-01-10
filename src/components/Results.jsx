@@ -35,4 +35,5 @@ const mapDispatchToProps = {
   sortMovies
 };
 
+export { Results };
 export default connect(null, mapDispatchToProps)(Results);

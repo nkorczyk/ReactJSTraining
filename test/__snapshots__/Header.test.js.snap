@@ -4,16 +4,6 @@ exports[`Header should render Header component 1`] = `
 <Header
   handleSearchByClick={[MockFunction]}
   searchby="TITLE"
-  store={
-    Object {
-      "clearActions": [Function],
-      "dispatch": [Function],
-      "getActions": [Function],
-      "getState": [Function],
-      "replaceReducer": [Function],
-      "subscribe": [Function],
-    }
-  }
 >
   <header
     className="header"
