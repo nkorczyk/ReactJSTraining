@@ -17,7 +17,8 @@ import {
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 const mockSuccess = response => ({
-  status: 200, response
+  status: 200,
+  response
 });
 const buildMockStore = (state = initialState) => {
   return mockStore(
@@ -130,6 +131,29 @@ describe('Action creator', () => {
 
     return store.dispatch(loadMovies())
       .then(() => {
+        expect(store.getActions()).toEqual(expected);
+      });
+  });
+
+  it('should dispatch loadMoviesFailed on error', () => {
+    moxios.install();
+    const store = buildMockStore();
+
+    moxios.wait(() => {
+      const request = moxios.requests.mostRecent();
+      request.respondWith({
+        status: 500,
+        error: 'error'
+      });
+    });
+
+    const expected = [
+      loadMoviesRequest(),
+      loadMoviesError('error')
+    ];
+
+    return store.dispatch(loadMovies())
+      .catch(() => {
         expect(store.getActions()).toEqual(expected);
       });
   });
