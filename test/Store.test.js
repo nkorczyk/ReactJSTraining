@@ -1,16 +1,13 @@
-import configStore from '../src/actions/store';
 import initialState from '../src/reducers/initialState';
+import configureMockStore from 'redux-mock-store';
 
-const { store } = configStore();
+const mockStore = configureMockStore();
 
 describe('Store', () => {
+  const store = mockStore({ ...initialState });
   it('should have a getState method that will restore the default state', () => {
     const expectedState = {
-      ...initialState,
-      _persist: {
-        'rehydrated': true,
-        'version': -1,
-      }
+      ...initialState
     };
     expect(store.getState()).toEqual(expectedState);
   });
