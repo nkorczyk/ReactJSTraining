@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { sortMovies } from '../actions/actionCreator';
 import { bindActionCreators } from 'redux';
@@ -24,6 +25,12 @@ class Results extends Component {
     )
   }
 }
+
+Results.propTypes = {
+  items: PropTypes.number,
+  sorty: PropTypes.string,
+  sortMovies: PropTypes.func
+};
 
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
