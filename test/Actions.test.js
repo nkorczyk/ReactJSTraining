@@ -5,7 +5,8 @@ import {
   searchMovieChange,
   loadMoviesSuccess,
   loadMoviesError,
-  loadMoviesRequest
+  loadMoviesRequest,
+  buildUrl
 } from '../src/actions/actionCreator';
 
 describe('Action creator', () => {
@@ -77,5 +78,18 @@ describe('Action creator', () => {
     };
 
     expect(loadMoviesError(mock)).toEqual(expectedAction);
+  });
+
+  it('should build correct URL', () => {
+    const getState = () => ({
+      search: {
+        searchby: 'genre',
+        phrase: 'fifty'
+      },
+      sortby: 'RATING'
+    });
+    const expectedURL = 'http://react-cdp-api.herokuapp.com/movies?search=fifty&searchBy=genres&sortOrder=desc&limit=15';
+
+    expect(buildUrl(getState)).toEqual(expectedURL);
   });
 });
