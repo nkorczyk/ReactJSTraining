@@ -1,4 +1,8 @@
+import configureMockStore from 'redux-mock-store';
+import moxios from 'moxios';
+import thunk from 'redux-thunk';
 import ACTION_TYPES from '../src/actions/types';
+import initialState from '../src/reducers/initialState';
 import {
   searchBy,
   sortMovies,
@@ -6,8 +10,20 @@ import {
   loadMoviesSuccess,
   loadMoviesError,
   loadMoviesRequest,
-  buildUrl
+  buildUrl,
+  loadMovies
 } from '../src/actions/actionCreator';
+
+const middlewares = [thunk];
+const mockStore = configureMockStore(middlewares);
+const mockSuccess = response => ({
+  status: 200, response
+});
+const buildMockStore = (state = initialState) => {
+  return mockStore(
+    state
+  );
+};
 
 describe('Action creator', () => {
   it('should create an action to search by movies', () => {
@@ -91,5 +107,30 @@ describe('Action creator', () => {
     const expectedURL = 'http://react-cdp-api.herokuapp.com/movies?search=fifty&searchBy=genres&sortOrder=desc&limit=15';
 
     expect(buildUrl(getState)).toEqual(expectedURL);
+  });
+
+  it('should dispatch loadMoviesSuccess on success', () => {
+    moxios.install();
+    const store = buildMockStore();
+    const response = {
+      data: {
+        data: ['test']
+      }
+    };
+
+    moxios.wait(() => {
+      const request = moxios.requests.mostRecent();
+      request.respondWith(mockSuccess(response.data));
+    });
+
+    const expected = [
+      loadMoviesRequest(),
+      loadMoviesSuccess(response)
+    ];
+
+    return store.dispatch(loadMovies())
+      .then(() => {
+        expect(store.getActions()).toEqual(expected);
+      });
   });
 });
