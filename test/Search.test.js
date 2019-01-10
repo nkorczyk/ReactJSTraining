@@ -35,11 +35,6 @@ describe('Search reducer', () => {
       search: {
         searchby: 'TITLE',
         phrase: ''
-      },
-      sortby: 'RATING',
-      movies: {
-        data: [],
-        status: null
       }
     };
 
