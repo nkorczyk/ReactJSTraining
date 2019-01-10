@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Header should render Header component 1`] = `
-<Connect(Header)
+<Header
   handleSearchByClick={[MockFunction]}
   searchby="TITLE"
   store={
@@ -15,75 +15,56 @@ exports[`Header should render Header component 1`] = `
     }
   }
 >
-  <Header
-    handleSearchByClick={[MockFunction]}
-    loadMovies={[Function]}
-    searchBy={[Function]}
-    searchMovieChange={[Function]}
-    searchby="TITLE"
-    store={
-      Object {
-        "clearActions": [Function],
-        "dispatch": [Function],
-        "getActions": [Function],
-        "getState": [Function],
-        "replaceReducer": [Function],
-        "subscribe": [Function],
-      }
-    }
+  <header
+    className="header"
   >
-    <header
-      className="header"
-    >
-      <Title>
-        <div>
-          <h5
-            className="red-text text-darken-2"
-          >
-            netflixroulette
-          </h5>
-        </div>
-      </Title>
-      <h4
-        className="white-text text-darken-2"
-      >
-        FIND YOUR MOVIE
-      </h4>
-      <input
-        className="input-field white-text"
-        onChange={[Function]}
-        placeholder="Enter the title"
-        type="text"
-      />
+    <Title>
       <div>
-        <h6
-          className="white-text text-darken-2 left"
+        <h5
+          className="red-text text-darken-2"
         >
-          SEARCH BY
-        </h6>
-        <button
-          className="lighten-1 btn buttons"
-          id="title"
-          onClick={[Function]}
-        >
-          TITLE
-        </button>
-        <button
-          className="lighten-1 btn buttons"
-          id="genre"
-          onClick={[Function]}
-        >
-          GENRE
-        </button>
-        <button
-          className="red lighten-1 btn right"
-          id="search"
-          onClick={[Function]}
-        >
-          SEARCH
-        </button>
+          netflixroulette
+        </h5>
       </div>
-    </header>
-  </Header>
-</Connect(Header)>
+    </Title>
+    <h4
+      className="white-text text-darken-2"
+    >
+      FIND YOUR MOVIE
+    </h4>
+    <input
+      className="input-field white-text"
+      onChange={[Function]}
+      placeholder="Enter the title"
+      type="text"
+    />
+    <div>
+      <h6
+        className="white-text text-darken-2 left"
+      >
+        SEARCH BY
+      </h6>
+      <button
+        className="lighten-1 btn buttons"
+        id="title"
+        onClick={[Function]}
+      >
+        TITLE
+      </button>
+      <button
+        className="lighten-1 btn buttons"
+        id="genre"
+        onClick={[Function]}
+      >
+        GENRE
+      </button>
+      <button
+        className="red lighten-1 btn right"
+        id="search"
+      >
+        SEARCH
+      </button>
+    </div>
+  </header>
+</Header>
 `;

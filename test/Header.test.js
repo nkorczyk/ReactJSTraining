@@ -1,6 +1,6 @@
 import React from 'react';
-import { mount } from 'enzyme';
-import Header from "../src/components/Header";
+import { shallow, mount } from 'enzyme';
+import { Header } from "../src/components/Header";
 import configureMockStore from 'redux-mock-store';
 
 const initialState = {
@@ -21,4 +21,17 @@ describe('Header', () => {
         store={store} />);
     expect(component).toMatchSnapshot();
   });
+});
+
+it('should call prop method', () => {
+  const spy = jest.fn();
+  const eventMock = {
+    target: {
+      value: 'test'
+    }
+  }
+
+  const instance = shallow(<Header handleChange={spy} searchMovieChange={spy} />).instance();
+  instance.handleChange(eventMock);
+  expect(spy).toHaveBeenCalled();
 });

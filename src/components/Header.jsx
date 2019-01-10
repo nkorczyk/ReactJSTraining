@@ -44,4 +44,5 @@ const mapDispatchToProps = (dispatch) => {
   }, dispatch)
 };
 
+export { Header };
 export default connect(null, mapDispatchToProps)(Header);
