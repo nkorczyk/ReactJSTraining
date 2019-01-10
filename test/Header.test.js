@@ -12,14 +12,17 @@ describe('Header', () => {
 });
 
 it('should call prop method', () => {
-  const spy = jest.fn();
+  const spyHandleChange = jest.fn();
+  const spySearchMovieChange = jest.fn();
   const eventMock = {
     target: {
       value: 'test'
     }
   };
 
-  const instance = shallow(<Header handleChange={spy} searchMovieChange={spy} />).instance();
+  const instance = shallow(<Header
+    handleChange={spyHandleChange}
+    searchMovieChange={spySearchMovieChange} />).instance();
   instance.handleChange(eventMock);
-  expect(spy).toHaveBeenCalled();
+  expect(spySearchMovieChange).toHaveBeenCalled();
 });
