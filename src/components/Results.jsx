@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { sortMovies } from '../actions/actionCreator';
-import { bindActionCreators } from 'redux';
 import CONSTANTS from '../constants/constants';
 
 class Results extends Component {
@@ -32,10 +31,8 @@ Results.propTypes = {
   sortMovies: PropTypes.func
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({
-    sortMovies
-  }, dispatch);
-}
+const mapDispatchToProps = {
+  sortMovies
+};
 
 export default connect(null, mapDispatchToProps)(Results);

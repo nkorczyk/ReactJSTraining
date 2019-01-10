@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Title from './Title';
 import CONSTANTS from '../constants/constants';
 import { loadMovies, searchBy, searchMovieChange } from '../actions/actionCreator';
-import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 class Header extends Component {
@@ -36,12 +35,10 @@ class Header extends Component {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({
+const mapDispatchToProps = {
     loadMovies,
     searchMovieChange,
     searchBy,
-  }, dispatch)
 };
 
 export { Header };

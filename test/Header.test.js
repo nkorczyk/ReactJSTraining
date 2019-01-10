@@ -29,7 +29,7 @@ it('should call prop method', () => {
     target: {
       value: 'test'
     }
-  }
+  };
 
   const instance = shallow(<Header handleChange={spy} searchMovieChange={spy} />).instance();
   instance.handleChange(eventMock);
