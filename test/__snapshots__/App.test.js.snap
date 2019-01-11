@@ -1,97 +1,323 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`App Snapshot renders 1`] = `
+exports[`App should rendered correctly 1`] = `
 <div>
   <header
-    className="header"
+    class="header"
   >
     <div>
       <h5
-        className="red-text text-darken-2"
+        class="red-text text-darken-2"
       >
         netflixroulette
       </h5>
     </div>
     <h4
-      className="white-text text-darken-2"
+      class="white-text text-darken-2"
     >
       FIND YOUR MOVIE
     </h4>
     <input
-      className="input-field white-text"
-      onChange={[Function]}
-      onKeyDown={[Function]}
+      class="input-field white-text"
       placeholder="Enter the title"
       type="text"
     />
     <div>
       <h6
-        className="white-text text-darken-2 left"
+        class="white-text text-darken-2 left"
       >
         SEARCH BY
       </h6>
       <button
-        className="lighten-1 btn buttons red"
+        class="lighten-1 btn buttons"
         id="title"
-        onClick={[Function]}
       >
         TITLE
       </button>
       <button
-        className="lighten-1 btn buttons grey"
+        class="lighten-1 btn buttons"
         id="genre"
-        onClick={[Function]}
       >
         GENRE
       </button>
       <button
-        className="red lighten-1 btn right"
+        class="red lighten-1 btn right"
         id="search"
-        onClick={[Function]}
       >
         SEARCH
       </button>
     </div>
   </header>
   <div
-    className="bar grey lighten-1"
+    class="bar grey lighten-1"
   >
     <h6
-      className="white-text text-darken-2 grey lighten-1 filter-bar left"
+      class="white-text text-darken-2 grey lighten-1 filter-bar left"
       id="moviesFound"
     >
-      0 movies found
+      9 movies found
     </h6>
-    <h6
-      className="white-text text-darken-2 grey lighten-1 filter-bar right"
+    <button
+      class="white-text text-darken-2 grey lighten-1 filter-bar right button-as-text"
+      id="RATING"
     >
       rating
-    </h6>
-    <h6
-      className="white-text text-darken-2 grey lighten-1 filter-bar right"
+    </button>
+    <button
+      class="white-text text-darken-2 grey lighten-1 filter-bar right button-as-text"
+      id="DATE"
     >
       release date
-    </h6>
+    </button>
     <h6
-      className="white-text text-darken-2 grey lighten-1 filter-bar right"
+      class="white-text text-darken-2 grey lighten-1 filter-bar right"
     >
       Sort by
     </h6>
   </div>
   <div
-    className="not-found"
+    class="movies-list"
   >
-    <h3
-      className="not-found-message"
-    >
-      No Films found
-    </h3>
+    <div>
+      <img
+        alt="When the creator of a popular video game system dies, a virtual contest is created to compete for his fortune."
+        class="thumbnails"
+        src="https://image.tmdb.org/t/p/w500/pU1ULUq8D3iRxl1fdX2lZIzdHuI.jpg"
+      />
+      <div
+        class="details"
+      >
+        <span
+          class="movie-title"
+        >
+          READY PLAYER ONE
+        </span>
+        <span
+          class="release-date"
+        >
+          2018-03-28
+        </span>
+      </div>
+      <span
+        class="genre"
+      >
+        Adventure & Science Fiction & Action
+      </span>
+    </div>
+    <div>
+      <img
+        alt="Lara Croft, the fiercely independent daughter of a missing adventurer, must push herself beyond her limits when she finds herself on the island where her father disappeared."
+        class="thumbnails"
+        src="https://image.tmdb.org/t/p/w500/ePyN2nX9t8SOl70eRW47Q29zUFO.jpg"
+      />
+      <div
+        class="details"
+      >
+        <span
+          class="movie-title"
+        >
+          TOMB RAIDER
+        </span>
+        <span
+          class="release-date"
+        >
+          2018-03-08
+        </span>
+      </div>
+      <span
+        class="genre"
+      >
+        Action & Adventure
+      </span>
+    </div>
+    <div>
+      <img
+        alt="King T'Challa returns home from America to the reclusive, technologically advanced African nation of Wakanda to serve as his country's new leader. However, T'Challa soon finds that he is challenged for the throne by factions within his own country as well as without.  Using powers reserved to Wakandan kings, T'Challa assumes the Black Panther mantel to join with girlfriend Nakia, the queen-mother, his princess-kid sister,  members of the Dora Milaje (the Wakandan \\"special forces\\"), and an American secret agent, to prevent Wakanda from being dragged into a world war."
+        class="thumbnails"
+        src="https://image.tmdb.org/t/p/w500/uxzzxijgPIY7slzFvMotPv8wjKA.jpg"
+      />
+      <div
+        class="details"
+      >
+        <span
+          class="movie-title"
+        >
+          BLACK PANTHER
+        </span>
+        <span
+          class="release-date"
+        >
+          2018-02-13
+        </span>
+      </div>
+      <span
+        class="genre"
+      >
+        Action & Adventure & Fantasy & Science Fiction
+      </span>
+    </div>
+    <div>
+      <img
+        alt="Believing they have left behind shadowy figures from their past, newlyweds Christian and Ana fully embrace an inextricable connection and shared life of luxury. But just as she steps into her role as Mrs. Grey and he relaxes into an unfamiliar stability, new threats could jeopardize their happy ending before it even begins."
+        class="thumbnails"
+        src="https://image.tmdb.org/t/p/w500/3kcEGnYBHDeqmdYf8ZRbKdfmlUy.jpg"
+      />
+      <div
+        class="details"
+      >
+        <span
+          class="movie-title"
+        >
+          FIFTY SHADES FREED
+        </span>
+        <span
+          class="release-date"
+        >
+          2018-02-07
+        </span>
+      </div>
+      <span
+        class="genre"
+      >
+        Drama & Romance
+      </span>
+    </div>
+    <div>
+      <img
+        alt="Rey develops her newly discovered abilities with the guidance of Luke Skywalker, who is unsettled by the strength of her powers. Meanwhile, the Resistance prepares to do battle with the First Order."
+        class="thumbnails"
+        src="https://image.tmdb.org/t/p/w500/kOVEVeg59E0wsnXmF9nrh6OmWII.jpg"
+      />
+      <div
+        class="details"
+      >
+        <span
+          class="movie-title"
+        >
+          STAR WARS: THE LAST JEDI
+        </span>
+        <span
+          class="release-date"
+        >
+          2017-12-13
+        </span>
+      </div>
+      <span
+        class="genre"
+      >
+        Fantasy & Adventure & Science Fiction
+      </span>
+    </div>
+    <div>
+      <img
+        alt="An other-worldly story, set against the backdrop of Cold War era America circa 1962, where a mute janitor working at a lab falls in love with an amphibious man being held captive there and devises a plan to help him escape."
+        class="thumbnails"
+        src="https://image.tmdb.org/t/p/w500/k4FwHlMhuRR5BISY2Gm2QZHlH5Q.jpg"
+      />
+      <div
+        class="details"
+      >
+        <span
+          class="movie-title"
+        >
+          THE SHAPE OF WATER
+        </span>
+        <span
+          class="release-date"
+        >
+          2017-12-01
+        </span>
+      </div>
+      <span
+        class="genre"
+      >
+        Drama & Fantasy & Romance
+      </span>
+    </div>
+    <div>
+      <img
+        alt="Thor is imprisoned on the other side of the universe and finds himself in a race against time to get back to Asgard to stop Ragnarok, the prophecy of destruction to his homeworld and the end of Asgardian civilization, at the hands of an all-powerful new threat, the ruthless Hela."
+        class="thumbnails"
+        src="https://image.tmdb.org/t/p/w500/rzRwTcFvttcN1ZpX2xv4j3tSdJu.jpg"
+      />
+      <div
+        class="details"
+      >
+        <span
+          class="movie-title"
+        >
+          THOR: RAGNAROK
+        </span>
+        <span
+          class="release-date"
+        >
+          2017-10-25
+        </span>
+      </div>
+      <span
+        class="genre"
+      >
+        Action & Adventure & Fantasy
+      </span>
+    </div>
+    <div>
+      <img
+        alt="A live-action adaptation of Disney's version of the classic tale of a cursed prince and a beautiful young woman who helps him break the spell."
+        class="thumbnails"
+        src="https://image.tmdb.org/t/p/w500/tWqifoYuwLETmmasnGHO7xBjEtt.jpg"
+      />
+      <div
+        class="details"
+      >
+        <span
+          class="movie-title"
+        >
+          BEAUTY AND THE BEAST
+        </span>
+        <span
+          class="release-date"
+        >
+          2017-03-16
+        </span>
+      </div>
+      <span
+        class="genre"
+      >
+        Family & Fantasy & Romance
+      </span>
+    </div>
+    <div>
+      <img
+        alt="Determined to prove herself, Officer Judy Hopps, the first bunny on Zootopia's police force, jumps at the chance to crack her first case - even if it means partnering with scam-artist fox Nick Wilde to solve the mystery."
+        class="thumbnails"
+        src="https://image.tmdb.org/t/p/w500/sM33SANp9z6rXW8Itn7NnG1GOEs.jpg"
+      />
+      <div
+        class="details"
+      >
+        <span
+          class="movie-title"
+        >
+          ZOOTOPIA
+        </span>
+        <span
+          class="release-date"
+        >
+          2016-02-11
+        </span>
+      </div>
+      <span
+        class="genre"
+      >
+        Animation & Adventure & Family & Comedy
+      </span>
+    </div>
   </div>
   <footer
-    className="bar"
+    class="bar"
   >
     <h5
-      className="red-text text-darken-2 grey darken-3 grey-bar"
+      class="red-text text-darken-2 grey darken-3 grey-bar"
     >
       netflixroulette
     </h5>

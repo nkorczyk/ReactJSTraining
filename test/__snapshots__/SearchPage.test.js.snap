@@ -1,223 +1,110 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render SearchPage component Snapshot test with default props 1`] = `
-<SearchPage
-  movies={
-    Array [
-      Object {
-        "genres": Array [
-          "Family",
-          "Fantasy",
-          "Romance",
-        ],
-        "id": 321612,
-        "overview": "A live-action adaptation of Disney's version",
-        "poster_path": "https://image.tmdb.org/t/p/w500/tWqifoYuwLETmmasnGHO7xBjEtt.jpg",
-        "release_date": "2017-03-16",
-        "tagline": "Be our guest.",
-        "title": "Beauty and the Beast",
-        "vote_average": 6.8,
-        "vote_count": 7861,
-      },
-    ]
-  }
-  refreshResults={null}
->
-  <div>
-    <Header
-      refreshResults={null}
-    >
-      <header
-        className="header"
-      >
-        <Title>
-          <div>
-            <h5
-              className="red-text text-darken-2"
-            >
-              netflixroulette
-            </h5>
-          </div>
-        </Title>
-        <h4
-          className="white-text text-darken-2"
-        >
-          FIND YOUR MOVIE
-        </h4>
-        <input
-          className="input-field white-text"
-          onChange={[Function]}
-          onKeyDown={[Function]}
-          placeholder="Enter the title"
-          type="text"
-        />
-        <div>
-          <h6
-            className="white-text text-darken-2 left"
-          >
-            SEARCH BY
-          </h6>
-          <button
-            className="lighten-1 btn buttons red"
-            id="title"
-            onClick={[Function]}
-          >
-            TITLE
-          </button>
-          <button
-            className="lighten-1 btn buttons grey"
-            id="genre"
-            onClick={[Function]}
-          >
-            GENRE
-          </button>
-          <button
-            className="red lighten-1 btn right"
-            id="search"
-            onClick={[Function]}
-          >
-            SEARCH
-          </button>
-        </div>
-      </header>
-    </Header>
-    <Results
-      items={1}
-    >
-      <div
-        className="bar grey lighten-1"
-      >
-        <h6
-          className="white-text text-darken-2 grey lighten-1 filter-bar left"
-          id="moviesFound"
-        >
-          1 movies found
-        </h6>
-        <h6
-          className="white-text text-darken-2 grey lighten-1 filter-bar right"
-        >
-          rating
-        </h6>
-        <h6
-          className="white-text text-darken-2 grey lighten-1 filter-bar right"
-        >
-          release date
-        </h6>
-        <h6
-          className="white-text text-darken-2 grey lighten-1 filter-bar right"
-        >
-          Sort by
-        </h6>
-      </div>
-    </Results>
-    <ErrorBoundary>
-      <Content
-        movies={
-          Array [
-            Object {
-              "genres": Array [
-                "Family",
-                "Fantasy",
-                "Romance",
-              ],
-              "id": 321612,
-              "overview": "A live-action adaptation of Disney's version",
-              "poster_path": "https://image.tmdb.org/t/p/w500/tWqifoYuwLETmmasnGHO7xBjEtt.jpg",
-              "release_date": "2017-03-16",
-              "tagline": "Be our guest.",
-              "title": "Beauty and the Beast",
-              "vote_average": 6.8,
-              "vote_count": 7861,
-            },
-          ]
-        }
-      >
-        <MoviesList
-          movies={
-            Array [
-              Object {
-                "genres": Array [
-                  "Family",
-                  "Fantasy",
-                  "Romance",
-                ],
-                "id": 321612,
-                "overview": "A live-action adaptation of Disney's version",
-                "poster_path": "https://image.tmdb.org/t/p/w500/tWqifoYuwLETmmasnGHO7xBjEtt.jpg",
-                "release_date": "2017-03-16",
-                "tagline": "Be our guest.",
-                "title": "Beauty and the Beast",
-                "vote_average": 6.8,
-                "vote_count": 7861,
-              },
-            ]
-          }
-        >
-          <div
-            className="movies-list"
-          >
-            <Item
-              key="321612"
-              movie={
-                Object {
-                  "genres": Array [
-                    "Family",
-                    "Fantasy",
-                    "Romance",
-                  ],
-                  "id": 321612,
-                  "overview": "A live-action adaptation of Disney's version",
-                  "poster_path": "https://image.tmdb.org/t/p/w500/tWqifoYuwLETmmasnGHO7xBjEtt.jpg",
-                  "release_date": "2017-03-16",
-                  "tagline": "Be our guest.",
-                  "title": "Beauty and the Beast",
-                  "vote_average": 6.8,
-                  "vote_count": 7861,
-                }
-              }
-            >
-              <div>
-                <img
-                  alt="A live-action adaptation of Disney's version"
-                  className="thumbnails"
-                  src="https://image.tmdb.org/t/p/w500/tWqifoYuwLETmmasnGHO7xBjEtt.jpg"
-                />
-                <div
-                  className="details"
-                >
-                  <span
-                    className="movie-title"
-                  >
-                    BEAUTY AND THE BEAST
-                  </span>
-                  <span
-                    className="release-date"
-                  >
-                    2017-03-16
-                  </span>
-                </div>
-                <span
-                  className="genre"
-                >
-                  Family & Fantasy & Romance
-                </span>
-              </div>
-            </Item>
-          </div>
-        </MoviesList>
-      </Content>
-    </ErrorBoundary>
-    <Footer>
-      <footer
-        className="bar"
-      >
-        <h5
-          className="red-text text-darken-2 grey darken-3 grey-bar"
-        >
-          netflixroulette
-        </h5>
-      </footer>
-    </Footer>
-  </div>
-</SearchPage>
+<div>
+  <Connect(Header) />
+  <Connect(Results)
+    items={5}
+  />
+  <ErrorBoundary>
+    <Content
+      movies={
+        Array [
+          Object {
+            "budget": 55000000,
+            "genres": Array [
+              "Drama",
+              "Romance",
+            ],
+            "id": 337167,
+            "overview": "Believing they have left behind shadowy figures from their past, newlyweds Christian and Ana fully embrace an inextricable connection and shared life of luxury. But just as she steps into her role as Mrs. Grey and he relaxes into an unfamiliar stability, new threats could jeopardize their happy ending before it even begins.",
+            "poster_path": "https://image.tmdb.org/t/p/w500/3kcEGnYBHDeqmdYf8ZRbKdfmlUy.jpg",
+            "release_date": "2018-02-07",
+            "revenue": 136906000,
+            "runtime": 106,
+            "tagline": "Don't miss the climax",
+            "title": "Fifty Shades Freed",
+            "vote_average": 6.1,
+            "vote_count": 1195,
+          },
+          Object {
+            "budget": 150000000,
+            "genres": Array [
+              "Animation",
+              "Adventure",
+              "Family",
+              "Comedy",
+            ],
+            "id": 269149,
+            "overview": "Determined to prove herself, Officer Judy Hopps, the first bunny on Zootopia's police force, jumps at the chance to crack her first case - even if it means partnering with scam-artist fox Nick Wilde to solve the mystery.",
+            "poster_path": "https://image.tmdb.org/t/p/w500/sM33SANp9z6rXW8Itn7NnG1GOEs.jpg",
+            "release_date": "2016-02-11",
+            "revenue": 1023784195,
+            "runtime": 108,
+            "tagline": "Welcome to the urban jungle.",
+            "title": "Zootopia",
+            "vote_average": 7.7,
+            "vote_count": 6795,
+          },
+          Object {
+            "budget": 200000000,
+            "genres": Array [
+              "Fantasy",
+              "Adventure",
+              "Science Fiction",
+            ],
+            "id": 181808,
+            "overview": "Rey develops her newly discovered abilities with the guidance of Luke Skywalker, who is unsettled by the strength of her powers. Meanwhile, the Resistance prepares to do battle with the First Order.",
+            "poster_path": "https://image.tmdb.org/t/p/w500/kOVEVeg59E0wsnXmF9nrh6OmWII.jpg",
+            "release_date": "2017-12-13",
+            "revenue": 1325937250,
+            "runtime": 152,
+            "tagline": "The Saga Continues",
+            "title": "Star Wars: The Last Jedi",
+            "vote_average": 7.1,
+            "vote_count": 4732,
+          },
+          Object {
+            "budget": 200000000,
+            "genres": Array [
+              "Action",
+              "Adventure",
+              "Fantasy",
+              "Science Fiction",
+            ],
+            "id": 284054,
+            "overview": "King T'Challa returns home from America to the reclusive, technologically advanced African nation of Wakanda to serve as his country's new leader. However, T'Challa soon finds that he is challenged for the throne by factions within his own country as well as without.  Using powers reserved to Wakandan kings, T'Challa assumes the Black Panther mantel to join with girlfriend Nakia, the queen-mother, his princess-kid sister,  members of the Dora Milaje (the Wakandan \\"special forces\\"), and an American secret agent, to prevent Wakanda from being dragged into a world war.",
+            "poster_path": "https://image.tmdb.org/t/p/w500/uxzzxijgPIY7slzFvMotPv8wjKA.jpg",
+            "release_date": "2018-02-13",
+            "revenue": 1245257672,
+            "runtime": 134,
+            "tagline": "Long live the king",
+            "title": "Black Panther",
+            "vote_average": 7.3,
+            "vote_count": 3788,
+          },
+          Object {
+            "budget": 19500000,
+            "genres": Array [
+              "Drama",
+              "Fantasy",
+              "Romance",
+            ],
+            "id": 399055,
+            "overview": "An other-worldly story, set against the backdrop of Cold War era America circa 1962, where a mute janitor working at a lab falls in love with an amphibious man being held captive there and devises a plan to help him escape.",
+            "poster_path": "https://image.tmdb.org/t/p/w500/k4FwHlMhuRR5BISY2Gm2QZHlH5Q.jpg",
+            "release_date": "2017-12-01",
+            "revenue": 185545281,
+            "runtime": 123,
+            "tagline": "A Fairy Tale for Troubled Times",
+            "title": "The Shape of Water",
+            "vote_average": 7.3,
+            "vote_count": 3200,
+          },
+        ]
+      }
+    />
+  </ErrorBoundary>
+  <Footer />
+</div>
 `;

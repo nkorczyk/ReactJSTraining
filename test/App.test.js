@@ -1,45 +1,31 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import TestRenderer from 'react-test-renderer';
-import { shallow } from 'enzyme';
-import axios from 'axios';
-import MockAdapter from 'axios-mock-adapter';
+import { render } from 'enzyme';
 import App from "../src/App";
+import configureMockStore from 'redux-mock-store';
+import { Provider } from "react-redux";
+import movies from '../mocks/movies';
 
-it('should render without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
-});
+const initialState = {
+  search: {
+    searchby: 'TITLE',
+    phrase: ''
+  },
+  sortby: 'DATE',
+  movies: {
+    data: movies.data,
+    status: 'LOAD_MOVIES_SUCCESS'
+  }
+};
 
-describe('App Snapshot', () => {
-  it('renders', () => {
-    const component = TestRenderer.create(<App />);
-    let tree = component.toJSON();
-    expect(tree).toMatchSnapshot();
-  });
-});
+const mockStore = configureMockStore();
 
-describe('should fetch data', () => {
-  it('should update state with response data', () => {
-    const url = 'http://react-cdp-api.herokuapp.com/movies?search=&searchBy=title';
-    const mock = new MockAdapter(axios);
-    mock
-      .onGet(url)
-      .reply(200, {
-        data: 'expected'
-      });
-
-    expect.assertions(1);
-
-    const component = shallow(<App />);
-    const instance = component.instance();
-
-    return instance.refreshResults(url).then(() => {
-      expect(component.state('data')).toEqual('expected');
-      afterEach(() => {
-        mock.restore();
-      });
-    });
+describe('App', () => {
+  const store = mockStore(initialState);
+  it('should rendered correctly', () => {
+    const component = render(
+      <Provider store={store}>
+        <App />
+      </Provider>);
+    expect(component).toMatchSnapshot();
   });
 });

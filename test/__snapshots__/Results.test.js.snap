@@ -1,33 +1,31 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render Results component Snapshot test with default props 1`] = `
-<Results
-  items={10}
+exports[`Results should render Results component Snapshot test with default props 1`] = `
+<div
+  class="bar grey lighten-1"
 >
-  <div
-    className="bar grey lighten-1"
+  <h6
+    class="white-text text-darken-2 grey lighten-1 filter-bar left"
+    id="moviesFound"
   >
-    <h6
-      className="white-text text-darken-2 grey lighten-1 filter-bar left"
-      id="moviesFound"
-    >
-      10 movies found
-    </h6>
-    <h6
-      className="white-text text-darken-2 grey lighten-1 filter-bar right"
-    >
-      rating
-    </h6>
-    <h6
-      className="white-text text-darken-2 grey lighten-1 filter-bar right"
-    >
-      release date
-    </h6>
-    <h6
-      className="white-text text-darken-2 grey lighten-1 filter-bar right"
-    >
-      Sort by
-    </h6>
-  </div>
-</Results>
+    10 movies found
+  </h6>
+  <button
+    class="white-text text-darken-2 grey lighten-1 filter-bar right button-as-text"
+    id="RATING"
+  >
+    rating
+  </button>
+  <button
+    class="white-text text-darken-2 grey lighten-1 filter-bar right button-as-text"
+    id="DATE"
+  >
+    release date
+  </button>
+  <h6
+    class="white-text text-darken-2 grey lighten-1 filter-bar right"
+  >
+    Sort by
+  </h6>
+</div>
 `;
