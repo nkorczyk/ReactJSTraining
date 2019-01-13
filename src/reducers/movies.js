@@ -19,6 +19,13 @@ function movies(state = initialState.movies, action) {
         data: [],
         status: ACTION_TYPES.LOAD_MOVIES_ERROR
       };
+    case ACTION_TYPES.SELECT_MOVIE:
+      return {
+        ...state,
+        selectedMovie: action.movie
+      };
+    case ACTION_TYPES.CLEAR_STORE:
+      return initialState.movies;
     default:
       return state;
   }

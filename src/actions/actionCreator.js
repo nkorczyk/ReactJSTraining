@@ -33,6 +33,15 @@ export const loadMoviesRequest = () => ({
   type: ACTION_TYPES.LOAD_MOVIES
 });
 
+export const selectMovie = (movie) => ({
+  type: ACTION_TYPES.SELECT_MOVIE,
+  movie
+});
+
+export const clearStore = () => ({
+  type: ACTION_TYPES.CLEAR_STORE,
+});
+
 export const buildUrl = (getState) => {
   const state = getState();
   const url = "http://react-cdp-api.herokuapp.com/movies";

@@ -1,86 +1,71 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render MovieDetails component Snapshot test with default props 1`] = `
-<MovieDetails
-  movie={
-    Object {
-      "genres": Array [
-        "Family",
-        "Fantasy",
-        "Romance",
-      ],
-      "id": 321612,
-      "overview": "A live-action adaptation of Disney's version",
-      "poster_path": "https://image.tmdb.org/t/p/w500/tWqifoYuwLETmmasnGHO7xBjEtt.jpg",
-      "release_date": "2017-03-16",
-      "tagline": "Be our guest.",
-      "title": "Beauty and the Beast",
-      "vote_average": 6.8,
-      "vote_count": 7861,
-    }
-  }
->
-  <div>
+<div>
+  <div
+    className="movie-wrapper"
+  >
     <div
-      className="movie-wrapper"
+      className="movie-header"
     >
-      <div
-        className="movie-header"
+      <h5
+        className="red-text text-darken-2"
       >
-        <h5
-          className="red-text text-darken-2"
-        >
-          netflixroulette
-        </h5>
+        netflixroulette
+      </h5>
+      <Link
+        replace={false}
+        to="/"
+      >
         <button
           className="red lighten-1 btn right"
         >
           SEARCH
         </button>
-      </div>
-      <div
-        className="movie-poster"
+      </Link>
+    </div>
+    <div
+      className="movie-poster"
+    >
+      <img
+        className="thumbnails-details"
+        src="https://image.tmdb.org/t/p/w500/tWqifoYuwLETmmasnGHO7xBjEtt.jpg"
+      />
+    </div>
+    <div
+      className="movie-detail"
+    >
+      <h3
+        className="red-text text-darken-2 title-details"
       >
-        <img
-          className="thumbnails-details"
-          src="https://image.tmdb.org/t/p/w500/tWqifoYuwLETmmasnGHO7xBjEtt.jpg"
-        />
-      </div>
-      <div
-        className="movie-detail"
+        Beauty and the Beast
+      </h3>
+      <h5
+        className="white-text text-darken-2 avg-rating"
       >
-        <h3
-          className="red-text text-darken-2 title-details"
-        >
-          Beauty and the Beast
-        </h3>
-        <h5
-          className="white-text text-darken-2 avg-rating"
-        >
-          6.8
-        </h5>
-        <p
-          className="white-text text-darken-2"
-        >
-          Family & Fantasy & Romance
-        </p>
-        <span
-          className="white-text text-darken-2"
-        >
-          2017-03-16
-        </span>
-        <span
-          className="white-text text-darken-2"
-        >
-          undefinedmin
-        </span>
-        <p
-          className="white-text text-darken-2"
-        >
-          A live-action adaptation of Disney's version
-        </p>
-      </div>
+        6.8
+      </h5>
+      <p
+        className="white-text text-darken-2"
+      >
+        Family & Fantasy & Romance
+      </p>
+      <span
+        className="white-text text-darken-2"
+      >
+        2017-03-16
+      </span>
+      <span
+        className="white-text text-darken-2"
+      >
+        undefinedmin
+      </span>
+      <p
+        className="white-text text-darken-2 overview"
+      >
+        A live-action adaptation of Disney's version
+      </p>
     </div>
   </div>
-</MovieDetails>
+</div>
 `;

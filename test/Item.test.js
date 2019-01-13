@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { shallow } from 'enzyme';
 import Item from "../src/components/Item";
 
 describe('should render Item component', () => {
@@ -20,7 +20,7 @@ describe('should render Item component', () => {
         "Romance"
       ],
     };
-    element = mount(<Item movie={movies_data} />);
+    element = shallow(<Item movie={movies_data} />);
   });
   it('Snapshot test with default props', () => {
     expect(element).toMatchSnapshot();

@@ -2,31 +2,58 @@ import React, { Component } from 'react';
 import './style.css';
 import 'materialize-css';
 import 'materialize-css/dist/css/materialize.min.css';
-import { loadMovies } from './actions/actionCreator';
+import { clearStore, loadMovies, selectMovie } from './actions/actionCreator';
 import { connect } from 'react-redux';
 import SearchPage from './components/SearchPage';
 import MoviePage from './components/MoviePage';
+import NotFound from "./components/NotFound";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 class App extends Component {
 
   componentDidMount() {
-    this.props.loadMovies();
+    this.props.clearStore();
+  };
+
+  getSelectedMovie = (movies, selectedId) => {
+    return movies.filter(movie => {
+      return movie.id === Number(selectedId);
+    })[0];
   };
 
   render() {
     return (
       <React.Fragment>
-        <SearchPage
-          movies={this.props.movies}
-          searchby={this.props.searchby}
-          sortby={this.props.sortby} />
-        {/* <MoviePage movies={this.state.data}/> */}
+        <BrowserRouter>
+          <div>
+            <Switch>
+              <Route exact path='/' render={() => {
+                return (
+                  <div>
+                    <SearchPage
+                      movies={this.props.movies}
+                      searchby={this.props.searchby}
+                      sortby={this.props.sortby} />
+                  </div>
+                )
+              }} />
+              <Route path='/film/:id' render={(props) => {
+                const selectedMovie = this.getSelectedMovie(this.props.movies, props.match.params.id);
+                this.props.selectMovie(selectedMovie);
+                return (
+                  <MoviePage />
+                )
+              }} />
+              <Route path='/*' component={NotFound} />
+            </Switch>
+          </div>
+        </BrowserRouter>
       </React.Fragment>
     );
   }
 }
 
-const mapDispatchToProps = { loadMovies };
+const mapDispatchToProps = { clearStore, loadMovies, selectMovie };
 
 const selectSortedMovies = (state) => {
   const sortby = state.sortby;
