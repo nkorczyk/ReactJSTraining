@@ -4,7 +4,7 @@ exports[`should render Item component Snapshot test with default props 1`] = `
 <div>
   <Link
     replace={false}
-    to="/movie/321612"
+    to="/film/321612"
   >
     <img
       alt="A live-action adaptation of Disney's version"
