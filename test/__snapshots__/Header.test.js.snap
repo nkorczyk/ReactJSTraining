@@ -3,6 +3,7 @@
 exports[`Header should render Header component 1`] = `
 <Header
   handleSearchByClick={[MockFunction]}
+  onSearch={[Function]}
   searchby="TITLE"
 >
   <header

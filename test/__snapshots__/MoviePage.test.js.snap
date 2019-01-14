@@ -2,11 +2,11 @@
 
 exports[`should render MoviePage component Snapshot test with default props 1`] = `
 <div>
-  <MovieDetails />
+  <withRouter(Connect(MovieDetails)) />
   <Connect(Results)
     items={5}
   />
-  <Content
+  <Connect(Content)
     movies={
       Array [
         Object {

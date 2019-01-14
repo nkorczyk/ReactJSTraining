@@ -4,11 +4,12 @@ import Title from './Title';
 import CONSTANTS from '../constants/constants';
 import { loadMovies, searchBy, searchMovieChange } from '../actions/actionCreator';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 class Header extends Component {
 
   handleSearchByClick = (event) => {
-    this.props.searchBy(event.target.id);
+    this.props.onSearch(event.target.id);
   }
 
   handleChange = (event) => {
@@ -16,16 +17,16 @@ class Header extends Component {
   }
 
   render() {
-    const { searchby } = this.props;
+    const { activeSearch } = this.props;
 
     const titleClass = classNames('lighten-1 btn buttons', {
-      'red': searchby === "title",
-      'grey': searchby === "genre",
+      'red': activeSearch === "title",
+      'grey': activeSearch === "genre",
     });
 
     const genreClass = classNames('lighten-1 btn buttons', {
-      'red': searchby === "genre",
-      'grey': searchby === "title",
+      'red': activeSearch === "genre",
+      'grey': activeSearch === "title",
     });
 
     return (
@@ -48,11 +49,25 @@ class Header extends Component {
   }
 }
 
+Header.propTypes = {
+  activeSearch: PropTypes.string,
+  onSearch: PropTypes.func,
+  // todo add loadMovies and searchMovieChange
+};
+
+Header.defaultProps = {
+  onSearch: () => { },
+};
+
+const mapStateToProps = (state) => ({
+  activeSearch: state.search.searchby,
+});
+
 const mapDispatchToProps = {
   loadMovies,
   searchMovieChange,
-  searchBy,
+  onSearch: searchBy,
 };
 
 export { Header };
-export default connect(null, mapDispatchToProps)(Header);
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

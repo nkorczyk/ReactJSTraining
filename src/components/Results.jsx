@@ -14,7 +14,7 @@ class Results extends Component {
     return (
       <div className="bar grey lighten-1">
         <h6 id="moviesFound"
-          className="white-text text-darken-2 grey lighten-1 filter-bar left">{this.props.items + " " + CONSTANTS.MOVIES_FOUND}</h6>
+          className="white-text text-darken-2 grey lighten-1 filter-bar left">{this.props.movieCount + " " + CONSTANTS.MOVIES_FOUND}</h6>
         <button id="RATING" onClick={this.handleClick}
           className="white-text text-darken-2 grey lighten-1 filter-bar right button-as-text">{CONSTANTS.RATING}</button>
         <button id="DATE" onClick={this.handleClick}
@@ -26,14 +26,17 @@ class Results extends Component {
 }
 
 Results.propTypes = {
-  items: PropTypes.number,
-  sorty: PropTypes.string,
+  movieCount: PropTypes.number,
   sortMovies: PropTypes.func
 };
+
+const mapStateToProps = (state) => ({
+  movieCount: state.movies.data.length,
+});
 
 const mapDispatchToProps = {
   sortMovies
 };
 
 export { Results };
-export default connect(null, mapDispatchToProps)(Results);
+export default connect(mapStateToProps, mapDispatchToProps)(Results);

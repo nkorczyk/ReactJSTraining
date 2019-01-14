@@ -29,7 +29,7 @@ it('should call prop searchMovieChange method', () => {
 
 it('should call prop searchBy method', () => {
   const spyhandleSearchByClick = jest.fn();
-  const spySearchBy = jest.fn();
+  const spyOnSearch = jest.fn();
   const eventMock = {
     target: {
       value: 'test'
@@ -38,7 +38,7 @@ it('should call prop searchBy method', () => {
 
   const instance = shallow(<Header
     handleSearchByClick={spyhandleSearchByClick}
-    searchBy={spySearchBy} />).instance();
+    onSearch={spyOnSearch} />).instance();
   instance.handleSearchByClick(eventMock);
-  expect(spySearchBy).toHaveBeenCalled();
+  expect(spyOnSearch).toHaveBeenCalled();
 });

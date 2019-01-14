@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import CONSTANTS from '../constants/constants';
-import { Link } from "react-router-dom";
-
+import { Link, withRouter } from "react-router-dom";
+import { connect } from 'react-redux';
 
 class MovieDetails extends Component {
   render() {
@@ -39,4 +39,8 @@ MovieDetails.propTypes = {
   movie: PropTypes.object
 };
 
-export default MovieDetails;
+const mapStateToProps = (state, ownProps) => ({
+  movie: state.movies.data.find(({ id }) => id === Number(ownProps.match.params.id)),
+});
+
+export default withRouter(connect(mapStateToProps)(MovieDetails));
