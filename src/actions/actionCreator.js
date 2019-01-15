@@ -1,5 +1,6 @@
 import axios from 'axios';
 import ACTION_TYPES from '../actions/types';
+import { baseURL } from '../constants/baseURL';
 
 export const searchBy = (searchby) => ({
   type: ACTION_TYPES.SEARCH_BY,
@@ -49,9 +50,14 @@ export const persistLastSearchPhrase = (lastSearchPhrase) => {
   });
 };
 
+export const LoadMovieDetailsSuccess = (movie) => ({
+  type: ACTION_TYPES.LOAD_MOVIE_DETAILS_SUCCESS,
+  movie
+});
+
 export const buildUrl = (getState) => {
   const state = getState();
-  const url = "http://react-cdp-api.herokuapp.com/movies";
+  const url = baseURL;
   const searchBy = `&searchBy=${state.search.searchby === "title" ? "title" : "genres"}`;
   const phrase = `?search=${state.search.lastSearchPhrase}`;
   const order = "&sortOrder=desc";
@@ -71,4 +77,12 @@ export const loadMovies = () => (dispatch, getState) => {
     .catch(error => {
       dispatch(loadMoviesError(error))
     });
+};
+
+export const getMovie = (url) => (dispatch, getState) => {
+  return axios.get(url)
+    .then(movie => {
+      dispatch(LoadMovieDetailsSuccess(movie));
+      const genre = movie.data.genres[0];
+    })
 };

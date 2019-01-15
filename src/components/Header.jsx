@@ -14,7 +14,6 @@ class Header extends Component {
   }
 
   handleSearch = () => {
-    console.log("this.propsdsad",this.props.phrase);
     this.props.persistLastSearchPhrase(this.props.phrase);
     this.props.loadMovies();
   }

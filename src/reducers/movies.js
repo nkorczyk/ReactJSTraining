@@ -24,6 +24,10 @@ function movies(state = initialState.movies, action) {
         ...state,
         selectedMovie: action.movie
       };
+    case ACTION_TYPES.LOAD_MOVIE_DETAILS_SUCCESS:
+      return {
+        ...state
+      };
     case ACTION_TYPES.CLEAR_STORE:
       return initialState.movies;
     default:

@@ -3,8 +3,16 @@ import PropTypes from 'prop-types';
 import CONSTANTS from '../constants/constants';
 import { Link, withRouter } from "react-router-dom";
 import { connect } from 'react-redux';
+import { getMovie } from '../actions/actionCreator';
+import { baseURL } from '../constants/baseURL';
 
 class MovieDetails extends Component {
+
+  componentDidMount() {
+    let url = `${baseURL}/${this.props.match.params.id}`;
+    this.props.getMovie(url);
+  }
+
   render() {
     const { movie } = this.props;
     const MovieDetails = movie ? (
@@ -39,8 +47,10 @@ MovieDetails.propTypes = {
   movie: PropTypes.object
 };
 
+const mapDispatchToProps = { getMovie };
+
 const mapStateToProps = (state, ownProps) => ({
   movie: state.movies.data.find(({ id }) => id === Number(ownProps.match.params.id)),
 });
 
-export default withRouter(connect(mapStateToProps)(MovieDetails));
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(MovieDetails));

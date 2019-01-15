@@ -17,7 +17,7 @@ function search(state = initialState.search, action) {
       return {
         ...state,
         lastSearchPhrase: action.lastSearchPhrase
-      }
+      };
     }
     default:
       return state;
