@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render NotFound component Snapshot test with default props 1`] = `
+exports[`should render NotFoundPage component Snapshot test with default props 1`] = `
 <div
   className="page-not-found"
 >

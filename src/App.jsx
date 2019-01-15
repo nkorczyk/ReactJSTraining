@@ -6,13 +6,9 @@ import { clearStore, loadMovies, selectMovie } from './actions/actionCreator';
 import { connect } from 'react-redux';
 import SearchPage from './components/SearchPage';
 import MoviePage from './components/MoviePage';
-import NotFound from "./components/NotFound";
+import NotFoundPage from "./components/NotFoundPage";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-
-// todo add update propTypes
-//const propTypes = {
-  // selectMovie: ...,
-//};
+import PropTypes from 'prop-types';
 
 class App extends Component {
 
@@ -28,7 +24,7 @@ class App extends Component {
             <Switch>
               <Route exact path='/' component={SearchPage} />
               <Route path='/film/:id' component={MoviePage} />
-              <Route path='/*' component={NotFound} />
+              <Route path='/*' component={NotFoundPage} />
             </Switch>
           </div>
         </BrowserRouter>
@@ -36,6 +32,12 @@ class App extends Component {
     );
   }
 }
+
+App.propTypes = {
+  clearStore: PropTypes.func,
+  loadMovies: PropTypes.func,
+  selectMovie: PropTypes.func,
+};
 
 const mapDispatchToProps = { clearStore, loadMovies, selectMovie };
 

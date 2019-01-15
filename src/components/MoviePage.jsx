@@ -6,10 +6,9 @@ import Footer from './Footer';
 import MovieDetails from './MovieDetails';
 import { connect } from 'react-redux';
 
-// todo rename component
-class SearchPage extends Component {
+class MoviePage extends Component {
   render() {
-    const { movieDetails, movies } = this.props;
+    const { movies } = this.props;
     return (
       <div>
         <MovieDetails />
@@ -21,18 +20,15 @@ class SearchPage extends Component {
   }
 }
 
-SearchPage.propTypes = {
+MoviePage.propTypes = {
   movies: PropTypes.array,
-  // movieDetails: PropTypes.object
 };
 
 const mapStateToProps = (state) => {
   return {
-    // movieDetails: state.movies.selectedMovie,
     movies: state.movies.data,
-    sortby: state.sortby
   };
 };
 
-export { SearchPage };
-export default connect(mapStateToProps)(SearchPage);
+export { MoviePage };
+export default connect(mapStateToProps)(MoviePage);

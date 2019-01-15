@@ -52,7 +52,8 @@ class Header extends Component {
 Header.propTypes = {
   activeSearch: PropTypes.string,
   onSearch: PropTypes.func,
-  // todo add loadMovies and searchMovieChange
+  loadMovies: PropTypes.func,
+  searchMovieChange: PropTypes.func,
 };
 
 Header.defaultProps = {
