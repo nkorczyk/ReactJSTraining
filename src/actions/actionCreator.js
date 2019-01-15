@@ -42,11 +42,18 @@ export const clearStore = () => ({
   type: ACTION_TYPES.CLEAR_STORE,
 });
 
+export const persistLastSearchPhrase = (lastSearchPhrase) => {
+  return ({
+    type: ACTION_TYPES.PERSIST_LAST_SEARCH_PHRASE,
+    lastSearchPhrase
+  });
+};
+
 export const buildUrl = (getState) => {
   const state = getState();
   const url = "http://react-cdp-api.herokuapp.com/movies";
   const searchBy = `&searchBy=${state.search.searchby === "title" ? "title" : "genres"}`;
-  const phrase = `?search=${state.search.phrase}`;
+  const phrase = `?search=${state.search.lastSearchPhrase}`;
   const order = "&sortOrder=desc";
   const limit = "&limit=15";
 

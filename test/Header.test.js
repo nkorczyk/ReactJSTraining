@@ -4,7 +4,7 @@ import { Header } from "../src/components/Header";
 
 describe('Header', () => {
   it('should render Header component', () => {
-    const component = mount(
+    const component = shallow(
       <Header searchby={'TITLE'}
         handleSearchByClick={jest.fn()} />);
     expect(component).toMatchSnapshot();

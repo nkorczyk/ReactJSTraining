@@ -12,6 +12,7 @@ module.exports = function (env, options) {
     mode: isProduction ? "production" : "development",
     devtool: isProduction ? "none" : "source-map",
     output: {
+      path: path.resolve(__dirname, 'dist'),
       publicPath: '/'
     },
 

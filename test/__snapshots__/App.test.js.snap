@@ -41,12 +41,16 @@ exports[`App should rendered correctly 1`] = `
         >
           GENRE
         </button>
-        <button
-          class="red lighten-1 btn right"
-          id="search"
+        <a
+          href="/search/Search "
         >
-          SEARCH
-        </button>
+          <button
+            class="red lighten-1 btn right"
+            id="search"
+          >
+            SEARCH
+          </button>
+        </a>
       </div>
     </header>
     <div

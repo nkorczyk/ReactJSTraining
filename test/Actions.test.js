@@ -101,7 +101,7 @@ describe('Action creator', () => {
     const getState = () => ({
       search: {
         searchby: 'genre',
-        phrase: 'fifty'
+        lastSearchPhrase: 'fifty',
       },
       sortby: 'RATING'
     });

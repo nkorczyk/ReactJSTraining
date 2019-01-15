@@ -23,8 +23,9 @@ class App extends Component {
           <div>
             <Switch>
               <Route exact path='/' component={SearchPage} />
+              <Route path='/search/:query' component={SearchPage} />
               <Route path='/film/:id' component={MoviePage} />
-              <Route path='/*' component={NotFoundPage} />
+              <Route path='*' component={NotFoundPage} />
             </Switch>
           </div>
         </BrowserRouter>
