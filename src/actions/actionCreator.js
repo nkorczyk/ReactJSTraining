@@ -55,10 +55,26 @@ export const LoadMovieDetailsSuccess = (movie) => ({
   movie
 });
 
+export const LoadMovieSimilarGenre = (movies) => ({
+  type: ACTION_TYPES.LOAD_MOVIES_SIMILAR_GENRE,
+  movies
+});
+
 export const buildUrl = (getState) => {
   const state = getState();
   const url = baseURL;
   const searchBy = `&searchBy=${state.search.searchby === "title" ? "title" : "genres"}`;
+  const phrase = `?search=${state.search.lastSearchPhrase}`;
+  const order = "&sortOrder=desc";
+  const limit = "&limit=15";
+
+  return `${url}${phrase}${searchBy}${order}${limit}`;
+}
+
+export const buildUrlByGenre = (getState, genre) => {
+  const state = getState();
+  const url = baseURL;
+  const searchBy = `&searchBy=${genre}`;
   const phrase = `?search=${state.search.lastSearchPhrase}`;
   const order = "&sortOrder=desc";
   const limit = "&limit=15";
@@ -84,5 +100,13 @@ export const getMovie = (url) => (dispatch, getState) => {
     .then(movie => {
       dispatch(LoadMovieDetailsSuccess(movie));
       const genre = movie.data.genres[0];
+      return genre;
     })
+    .then(genre => {
+      const urlByGenre = buildUrlByGenre(getState, genre);
+      return axios.get(urlByGenre);
+    })
+    .then(moviesbyGenre => {
+      dispatch(LoadMovieSimilarGenre(moviesbyGenre));
+    });
 };

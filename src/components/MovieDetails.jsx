@@ -14,7 +14,7 @@ class MovieDetails extends Component {
   }
 
   render() {
-    const { movie } = this.props;
+    const movie = this.props.selectedMovie ? this.props.selectedMovie[0] : null;
     const MovieDetails = movie ? (
       <div className="movie-wrapper">
         <div className="movie-header">
@@ -51,6 +51,7 @@ const mapDispatchToProps = { getMovie };
 
 const mapStateToProps = (state, ownProps) => ({
   movie: state.movies.data.find(({ id }) => id === Number(ownProps.match.params.id)),
+  selectedMovie: state.movies.selectedMovie,
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(MovieDetails));

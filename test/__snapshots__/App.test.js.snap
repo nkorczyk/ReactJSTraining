@@ -42,7 +42,7 @@ exports[`App should rendered correctly 1`] = `
           GENRE
         </button>
         <a
-          href="/search/Search "
+          href="/search/"
         >
           <button
             class="red lighten-1 btn right"

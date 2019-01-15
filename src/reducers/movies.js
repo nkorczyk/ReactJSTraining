@@ -26,7 +26,13 @@ function movies(state = initialState.movies, action) {
       };
     case ACTION_TYPES.LOAD_MOVIE_DETAILS_SUCCESS:
       return {
-        ...state
+        ...state,
+        selectedMovie: [action.movie.data]
+      };
+    case ACTION_TYPES.LOAD_MOVIES_SIMILAR_GENRE:
+      return {
+        ...state,
+        data: action.movies.data.data
       };
     case ACTION_TYPES.CLEAR_STORE:
       return initialState.movies;

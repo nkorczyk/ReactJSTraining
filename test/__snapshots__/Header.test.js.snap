@@ -38,7 +38,7 @@ exports[`Header should render Header component 1`] = `
     </button>
     <Link
       replace={false}
-      to="/search/Search undefined"
+      to="/search/undefined"
     >
       <button
         className="red lighten-1 btn right"

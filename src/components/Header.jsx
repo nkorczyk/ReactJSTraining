@@ -47,7 +47,7 @@ class Header extends Component {
             onClick={this.handleSearchByClick}>{CONSTANTS.TITLE}</button>
           <button id="genre" className={genreClass}
             onClick={this.handleSearchByClick}>{CONSTANTS.GENRE}</button>
-          <Link to={'/search/Search ' + this.props.phrase}>
+          <Link to={`/search/${encodeURIComponent(this.props.phrase)}`}>
             <button id="search" className="red lighten-1 btn right"
               onClick={this.handleSearch}>{CONSTANTS.SEARCH}</button>
           </Link>
