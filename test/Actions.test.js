@@ -98,16 +98,9 @@ describe('Action creator', () => {
   });
 
   it('should build correct URL', () => {
-    const getState = () => ({
-      search: {
-        searchby: 'genre',
-        lastSearchPhrase: 'fifty',
-      },
-      sortby: 'RATING'
-    });
     const expectedURL = 'http://react-cdp-api.herokuapp.com/movies?search=fifty&searchBy=genres&sortOrder=desc&limit=15';
 
-    expect(buildUrl(getState)).toEqual(expectedURL);
+    expect(buildUrl('genre', 'fifty')).toEqual(expectedURL);
   });
 
   it('should dispatch loadMoviesSuccess on success', () => {

@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render MovieDetails component Snapshot test with default props 1`] = `
-<Route>
-  <Component />
-</Route>
+<Route
+  render={[Function]}
+/>
 `;

@@ -39,10 +39,6 @@ export const selectMovie = (movie) => ({
   movie
 });
 
-export const clearStore = () => ({
-  type: ACTION_TYPES.CLEAR_STORE,
-});
-
 export const persistLastSearchPhrase = (lastSearchPhrase) => {
   return ({
     type: ACTION_TYPES.PERSIST_LAST_SEARCH_PHRASE,
@@ -50,41 +46,29 @@ export const persistLastSearchPhrase = (lastSearchPhrase) => {
   });
 };
 
-export const LoadMovieDetailsSuccess = (movie) => ({
+export const loadMovieDetailsSuccess = (movie) => ({
   type: ACTION_TYPES.LOAD_MOVIE_DETAILS_SUCCESS,
   movie
 });
 
-export const LoadMovieSimilarGenre = (movies) => ({
+export const loadMovieSimilarGenre = (movies) => ({
   type: ACTION_TYPES.LOAD_MOVIES_SIMILAR_GENRE,
   movies
 });
 
-export const buildUrl = (getState) => {
-  const state = getState();
-  const url = baseURL;
-  const searchBy = `&searchBy=${state.search.searchby === "title" ? "title" : "genres"}`;
-  const phrase = `?search=${state.search.lastSearchPhrase}`;
+export const buildUrl = (searchBy, phrase) => {
+  const searchByTitleOrGenre = `&searchBy=${searchBy === "title" ? "title" : "genres"}`;
+  const searchPhrase = `?search=${phrase}`;
   const order = "&sortOrder=desc";
   const limit = "&limit=15";
 
-  return `${url}${phrase}${searchBy}${order}${limit}`;
-}
-
-export const buildUrlByGenre = (getState, genre) => {
-  const state = getState();
-  const url = baseURL;
-  const searchBy = `&searchBy=${genre}`;
-  const phrase = `?search=${state.search.lastSearchPhrase}`;
-  const order = "&sortOrder=desc";
-  const limit = "&limit=15";
-
-  return `${url}${phrase}${searchBy}${order}${limit}`;
+  return `${baseURL}${searchPhrase}${searchByTitleOrGenre}${order}${limit}`;
 }
 
 export const loadMovies = () => (dispatch, getState) => {
   dispatch(loadMoviesRequest());
-  const url = buildUrl(getState);
+  const { search } = getState();
+  const url = buildUrl(search.searchby, search.lastSearchPhrase);
 
   return axios.get(url)
     .then(response => {
@@ -95,18 +79,18 @@ export const loadMovies = () => (dispatch, getState) => {
     });
 };
 
-export const getMovie = (url) => (dispatch, getState) => {
+export const getMovie = (url) => (dispatch) => {
   return axios.get(url)
     .then(movie => {
-      dispatch(LoadMovieDetailsSuccess(movie));
+      dispatch(loadMovieDetailsSuccess(movie));
       const genre = movie.data.genres[0];
       return genre;
     })
     .then(genre => {
-      const urlByGenre = buildUrlByGenre(getState, genre);
+      const urlByGenre = buildUrl('genres', genre);
       return axios.get(urlByGenre);
     })
     .then(moviesbyGenre => {
-      dispatch(LoadMovieSimilarGenre(moviesbyGenre));
+      dispatch(loadMovieSimilarGenre(moviesbyGenre));
     });
 };

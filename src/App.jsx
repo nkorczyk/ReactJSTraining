@@ -12,10 +12,6 @@ import PropTypes from 'prop-types';
 
 class App extends Component {
 
-  componentDidMount() {
-    this.props.clearStore();
-  };
-
   render() {
     return (
       <React.Fragment>
@@ -35,11 +31,10 @@ class App extends Component {
 }
 
 App.propTypes = {
-  clearStore: PropTypes.func,
   loadMovies: PropTypes.func,
   selectMovie: PropTypes.func,
 };
 
-const mapDispatchToProps = { clearStore, loadMovies, selectMovie };
+const mapDispatchToProps = { loadMovies, selectMovie };
 
 export default connect(null, mapDispatchToProps)(App);

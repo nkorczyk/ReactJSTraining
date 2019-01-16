@@ -34,8 +34,6 @@ function movies(state = initialState.movies, action) {
         ...state,
         data: action.movies.data.data
       };
-    case ACTION_TYPES.CLEAR_STORE:
-      return initialState.movies;
     default:
       return state;
   }
