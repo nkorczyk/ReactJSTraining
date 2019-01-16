@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import classNames from 'classnames';
 import Title from './Title';
 import CONSTANTS from '../constants/constants';
-import { loadMovies, searchBy, searchMovieChange, persistLastSearchPhrase } from '../actions/actionCreator';
+import { loadMovies, searchBy, searchMovieChange } from '../actions/actionCreator';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
@@ -14,7 +14,6 @@ class Header extends Component {
   }
 
   handleSearch = () => {
-    this.props.persistLastSearchPhrase(this.props.phrase);
     this.props.loadMovies();
   }
 
@@ -76,7 +75,6 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = {
   loadMovies,
   searchMovieChange,
-  persistLastSearchPhrase,
   onSearch: searchBy,
 };
 

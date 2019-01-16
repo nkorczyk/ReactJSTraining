@@ -13,12 +13,6 @@ function search(state = initialState.search, action) {
         ...state,
         phrase: action.phrase
       };
-    case ACTION_TYPES.PERSIST_LAST_SEARCH_PHRASE: {
-      return {
-        ...state,
-        lastSearchPhrase: action.lastSearchPhrase
-      };
-    }
     default:
       return state;
   }

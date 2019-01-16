@@ -39,13 +39,6 @@ export const selectMovie = (movie) => ({
   movie
 });
 
-export const persistLastSearchPhrase = (lastSearchPhrase) => {
-  return ({
-    type: ACTION_TYPES.PERSIST_LAST_SEARCH_PHRASE,
-    lastSearchPhrase
-  });
-};
-
 export const loadMovieDetailsSuccess = (movie) => ({
   type: ACTION_TYPES.LOAD_MOVIE_DETAILS_SUCCESS,
   movie
