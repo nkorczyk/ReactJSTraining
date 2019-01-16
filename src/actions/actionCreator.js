@@ -79,7 +79,8 @@ export const loadMovies = () => (dispatch, getState) => {
     });
 };
 
-export const getMovie = (url) => (dispatch) => {
+export const getMovie = (id) => (dispatch) => {
+  const url = `${baseURL}/${id}`;
   return axios.get(url)
     .then(movie => {
       dispatch(loadMovieDetailsSuccess(movie));

@@ -4,13 +4,12 @@ import CONSTANTS from '../constants/constants';
 import { Link, withRouter } from "react-router-dom";
 import { connect } from 'react-redux';
 import { getMovie } from '../actions/actionCreator';
-import { baseURL } from '../constants/baseURL';
 
 class MovieDetails extends Component {
 
   componentDidMount() {
-    let url = `${baseURL}/${this.props.match.params.id}`;
-    this.props.getMovie(url);
+    console.log("asdasd",this.props.match)
+    this.props.getMovie(this.props.match.params.id);
   }
 
   render() {
