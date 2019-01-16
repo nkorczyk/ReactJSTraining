@@ -9,7 +9,7 @@ const Item = (props) => {
 
   return (
     <div>
-      <Link to={'/film/' + id}>
+      <Link to={`/film/${id}`}>
         <img src={poster_path} className="thumbnails" alt={overview} />
       </Link>
       <div className="details">

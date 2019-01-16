@@ -2,16 +2,12 @@ import React, { Component } from 'react';
 import './style.css';
 import 'materialize-css';
 import 'materialize-css/dist/css/materialize.min.css';
-import { clearStore, loadMovies, selectMovie } from './actions/actionCreator';
-import { connect } from 'react-redux';
 import SearchPage from './components/SearchPage';
 import MoviePage from './components/MoviePage';
 import NotFoundPage from "./components/NotFoundPage";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import PropTypes from 'prop-types';
 
 class App extends Component {
-
   render() {
     return (
       <React.Fragment>
@@ -30,11 +26,4 @@ class App extends Component {
   }
 }
 
-App.propTypes = {
-  loadMovies: PropTypes.func,
-  selectMovie: PropTypes.func,
-};
-
-const mapDispatchToProps = { loadMovies, selectMovie };
-
-export default connect(null, mapDispatchToProps)(App);
+export default App;
