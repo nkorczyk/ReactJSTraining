@@ -8,8 +8,13 @@ import { getMovie } from '../actions/actionCreator';
 class MovieDetails extends Component {
 
   componentDidMount() {
-    console.log("asdasd",this.props.match)
     this.props.getMovie(this.props.match.params.id);
+  }
+
+  componentDidUpdate() {
+    if (this.props.match) {
+      this.props.getMovie(this.props.match.params.id);
+    }
   }
 
   render() {
