@@ -25,7 +25,6 @@ function movies(state = initialState.movies, action) {
         selectedMovie: action.movie
       };
     case ACTION_TYPES.LOAD_MOVIE_DETAILS_SUCCESS:
-    console.log("action.movie.data", action.movie)
       return {
         ...state,
         selectedMovie: action.movie.data
