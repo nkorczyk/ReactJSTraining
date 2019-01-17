@@ -197,3 +197,12 @@ bar:after {
   border:none;
   cursor: pointer;
 }
+
+.overview {
+  font-size: 11px;
+}
+
+.page-not-found {
+  margin: 160px;
+  text-align: center;
+}

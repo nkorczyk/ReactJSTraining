@@ -4,7 +4,7 @@ import { Header } from "../src/components/Header";
 
 describe('Header', () => {
   it('should render Header component', () => {
-    const component = mount(
+    const component = shallow(
       <Header searchby={'TITLE'}
         handleSearchByClick={jest.fn()} />);
     expect(component).toMatchSnapshot();
@@ -29,7 +29,7 @@ it('should call prop searchMovieChange method', () => {
 
 it('should call prop searchBy method', () => {
   const spyhandleSearchByClick = jest.fn();
-  const spySearchBy = jest.fn();
+  const spyOnSearch = jest.fn();
   const eventMock = {
     target: {
       value: 'test'
@@ -38,7 +38,7 @@ it('should call prop searchBy method', () => {
 
   const instance = shallow(<Header
     handleSearchByClick={spyhandleSearchByClick}
-    searchBy={spySearchBy} />).instance();
+    onSearch={spyOnSearch} />).instance();
   instance.handleSearchByClick(eventMock);
-  expect(spySearchBy).toHaveBeenCalled();
+  expect(spyOnSearch).toHaveBeenCalled();
 });

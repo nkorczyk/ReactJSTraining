@@ -1,23 +1,20 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 import Results from './Results';
 import Content from './Content';
 import Footer from './Footer';
 import MovieDetails from './MovieDetails';
 
-const SearchPage = ({ movies }) => {
-  return (
-    <div>
-        <MovieDetails movie={movies[0]} />
-        <Results items={movies.length} />
-        <Content movies={movies} />
+class MoviePage extends Component {
+  render() {
+    return (
+      <div>
+        <MovieDetails />
+        <Results />
+        <Content />
         <Footer />
-    </div>
-  )
+      </div>
+    )
+  }
 }
 
-SearchPage.propTypes = {
-  movies: PropTypes.array
-};
-
-export default SearchPage;
+export default MoviePage;

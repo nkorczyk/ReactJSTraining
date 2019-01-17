@@ -1,60 +1,53 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Header should render Header component 1`] = `
-<Header
-  handleSearchByClick={[MockFunction]}
-  searchby="TITLE"
+<header
+  className="header"
 >
-  <header
-    className="header"
+  <Title />
+  <h4
+    className="white-text text-darken-2"
   >
-    <Title>
-      <div>
-        <h5
-          className="red-text text-darken-2"
-        >
-          netflixroulette
-        </h5>
-      </div>
-    </Title>
-    <h4
-      className="white-text text-darken-2"
+    FIND YOUR MOVIE
+  </h4>
+  <input
+    className="input-field white-text"
+    onChange={[Function]}
+    placeholder="Enter the title"
+    type="text"
+  />
+  <div>
+    <h6
+      className="white-text text-darken-2 left"
     >
-      FIND YOUR MOVIE
-    </h4>
-    <input
-      className="input-field white-text"
-      onChange={[Function]}
-      placeholder="Enter the title"
-      type="text"
-    />
-    <div>
-      <h6
-        className="white-text text-darken-2 left"
-      >
-        SEARCH BY
-      </h6>
-      <button
-        className="lighten-1 btn buttons"
-        id="title"
-        onClick={[Function]}
-      >
-        TITLE
-      </button>
-      <button
-        className="lighten-1 btn buttons"
-        id="genre"
-        onClick={[Function]}
-      >
-        GENRE
-      </button>
+      SEARCH BY
+    </h6>
+    <button
+      className="lighten-1 btn buttons"
+      id="title"
+      onClick={[Function]}
+    >
+      TITLE
+    </button>
+    <button
+      className="lighten-1 btn buttons"
+      id="genre"
+      onClick={[Function]}
+    >
+      GENRE
+    </button>
+    <Link
+      replace={false}
+      to="/search/undefined"
+    >
       <button
         className="red lighten-1 btn right"
         id="search"
+        onClick={[Function]}
       >
         SEARCH
       </button>
-    </div>
-  </header>
-</Header>
+    </Link>
+  </div>
+</header>
 `;

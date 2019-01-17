@@ -1,50 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render Item component Snapshot test with default props 1`] = `
-<Item
-  movie={
-    Object {
-      "genres": Array [
-        "Family",
-        "Fantasy",
-        "Romance",
-      ],
-      "id": 321612,
-      "overview": "A live-action adaptation of Disney's version",
-      "poster_path": "https://image.tmdb.org/t/p/w500/tWqifoYuwLETmmasnGHO7xBjEtt.jpg",
-      "release_date": "2017-03-16",
-      "tagline": "Be our guest.",
-      "title": "Beauty and the Beast",
-      "vote_average": 6.8,
-      "vote_count": 7861,
-    }
-  }
->
-  <div>
+<div>
+  <Link
+    replace={false}
+    to="/film/321612"
+  >
     <img
       alt="A live-action adaptation of Disney's version"
       className="thumbnails"
       src="https://image.tmdb.org/t/p/w500/tWqifoYuwLETmmasnGHO7xBjEtt.jpg"
     />
-    <div
-      className="details"
-    >
-      <span
-        className="movie-title"
-      >
-        BEAUTY AND THE BEAST
-      </span>
-      <span
-        className="release-date"
-      >
-        2017-03-16
-      </span>
-    </div>
+  </Link>
+  <div
+    className="details"
+  >
     <span
-      className="genre"
+      className="movie-title"
     >
-      Family & Fantasy & Romance
+      BEAUTY AND THE BEAST
+    </span>
+    <span
+      className="release-date"
+    >
+      2017-03-16
     </span>
   </div>
-</Item>
+  <span
+    className="genre"
+  >
+    Family & Fantasy & Romance
+  </span>
+</div>
 `;
