@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Root should rendered correctly 1`] = `
+<Provider
+  store={
+    Object {
+      "clearActions": [Function],
+      "dispatch": [Function],
+      "getActions": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+    }
+  }
+>
+  <mockConstructor
+    context={null}
+    location={null}
+  >
+    <div>
+      <Switch>
+        <Route
+          component={[Function]}
+          exact={true}
+          path="/"
+        />
+        <Route
+          component={[Function]}
+          path="/search/:query"
+        />
+        <Route
+          component={[Function]}
+          path="/film/:id"
+        />
+        <Route
+          component={[Function]}
+          path="*"
+        />
+      </Switch>
+    </div>
+  </mockConstructor>
+</Provider>
+`;
