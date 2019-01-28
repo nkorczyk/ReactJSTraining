@@ -4,14 +4,15 @@ import { StaticRouter } from 'react-router-dom';
 import { matchRoutes } from 'react-router-config';
 import Root from './Root';
 import SearchPage from './components/SearchPage';
-import MoviePage from './components/MoviePage';
 import NotFoundPage from "./components/NotFoundPage";
 import configureStore from './actions/store';
+import MovieDetails from './components/MovieDetails';
+import Content from './components/Content';
 
 const routes = [
   { path: '/', exact: true, component: SearchPage },
-  { path: '/search/:query', exact: true, component: SearchPage },
-  { path: '/film/:id', exact: true, component: MoviePage },
+  { path: '/search/:query', exact: true, component: Content },
+  { path: '/film/:id', exact: true, component: MovieDetails },
   { path: '/*', component: NotFoundPage }
 ];
 

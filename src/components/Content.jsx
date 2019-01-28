@@ -1,18 +1,32 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import MoviesList from './MoviesList';
 import ErrorMessage from './ErrorMessage';
 import CONSTANTS from '../constants/constants';
 import { connect } from 'react-redux';
+import { searchMovies } from '../actions/actionCreator';
 
-const Content = ({ movies, sortby }) => {
-  const moviesFound = movies.length > 0;
-  return (
-    <React.Fragment>
-      {moviesFound && <MoviesList movies={movies} />}
-      {!moviesFound && <ErrorMessage message={CONSTANTS.NO_FILMS_FOUND} />}
-    </React.Fragment>
-  )
+class Content extends Component {
+
+  static fetchData(dispatch, match) {
+    return dispatch(searchMovies(match.params.query));
+  }
+
+  componentDidMount() {
+    if (this.props.match) {
+      this.props.searchMovies(this.props.match.params.query);
+    }
+  }
+  render() {
+    const { movies } = this.props;
+    const moviesFound = movies.length > 0;
+    return (
+      <React.Fragment>
+        {moviesFound && <MoviesList movies={movies} />}
+        {!moviesFound && <ErrorMessage message={CONSTANTS.NO_FILMS_FOUND} />}
+      </React.Fragment>
+    )
+  }
 }
 
 Content.propTypes = {
@@ -41,10 +55,12 @@ const selectSortedMovies = (state) => {
   });
 };
 
+const mapDispatchToProps = { searchMovies };
+
 const mapStateToProps = (state) => ({
-  movies: selectSortedMovies(state),
+  movies: state.movies.data,
   sortby: state.sortby,
 });
 
 export { Content };
-export default connect(mapStateToProps)(Content);
+export default connect(mapStateToProps, mapDispatchToProps)(Content);

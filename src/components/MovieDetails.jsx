@@ -7,6 +7,10 @@ import { getMovie } from '../actions/actionCreator';
 
 class MovieDetails extends Component {
 
+  static fetchData(dispatch, match) {
+    return dispatch(getMovie(match.params.id));
+  }
+
   componentWillMount() {
     this.props.getMovie(this.props.match.params.id);
   }

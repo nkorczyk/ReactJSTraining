@@ -79,6 +79,17 @@ export const loadMovies = () => (dispatch, getState) => {
     });
 };
 
+export const searchMovies = (phrase) => (dispatch, getState) => {
+  const url = buildUrl("title", phrase);
+  return axios.get(url)
+    .then(response => {
+      dispatch(loadMoviesSuccess(response))
+    })
+    .catch(error => {
+      dispatch(loadMoviesError(error))
+    });
+};
+
 export const getMovie = (id) => (dispatch) => {
   const url = `${baseURL}/${id}`;
   return axios.get(url)
