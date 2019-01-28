@@ -7,12 +7,12 @@ import { getMovie } from '../actions/actionCreator';
 
 class MovieDetails extends Component {
 
-  componentDidMount() {
+  componentWillMount() {
     this.props.getMovie(this.props.match.params.id);
   }
 
-  componentDidUpdate() {
-    if (this.props.match) {
+  componentDidUpdate(prevProps) {
+    if (this.props.match.params.id !== prevProps.match.params.id) {
       this.props.getMovie(this.props.match.params.id);
     }
   }
