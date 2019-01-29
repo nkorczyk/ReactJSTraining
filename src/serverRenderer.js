@@ -28,10 +28,10 @@ function renderHTML(html, preloadedState) {
         </head>
         <body>
         <div id="root">${html}</div>
-          <script src="/js/main.js"></script>
-          <script>
-            window.PRELOADED_STATE = ${JSON.stringify(preloadedState).replace(/</g, '\\u003c')}
-          </script>
+        <script>
+          window.PRELOADED_STATE = ${JSON.stringify(preloadedState).replace(/</g, '\\u003c')}
+        </script>
+        <script src="/js/main.js"></script>
         </body>
       </html>
   `;
