@@ -27,7 +27,7 @@ function renderHTML(html, preloadedState) {
           ${process.env.NODE_ENV === 'development' ? '' : '<link href="/css/main.css" rel="stylesheet" type="text/css">'}
         </head>
         <body>
-          <div id="root">${html}</div>
+        <div id="root">${html}</div>
           <script src="/js/main.js"></script>
           <script>
             window.PRELOADED_STATE = ${JSON.stringify(preloadedState).replace(/</g, '\\u003c')}
