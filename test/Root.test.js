@@ -1,8 +1,7 @@
 import React from 'react';
-import { render } from 'enzyme';
-import App from "../src/App";
+import { shallow } from 'enzyme';
+import Root from "../src/Root";
 import configureMockStore from 'redux-mock-store';
-import { Provider } from "react-redux";
 import movies from '../mocks/movies';
 
 const initialState = {
@@ -18,14 +17,16 @@ const initialState = {
 };
 
 const mockStore = configureMockStore();
+const mockRouter = jest.fn();
 
-describe('App', () => {
+describe('Root', () => {
   const store = mockStore(initialState);
   it('should rendered correctly', () => {
-    const component = render(
-      <Provider store={store}>
-        <App />
-      </Provider>);
+    const component = shallow(
+      <Root
+        store={store}
+        Router={mockRouter} />
+    );
     expect(component).toMatchSnapshot();
   });
 });

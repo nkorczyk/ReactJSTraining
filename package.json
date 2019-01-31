@@ -5,10 +5,9 @@
   "entry point": "srcServer.js",
   "main": "script.js",
   "scripts": {
-    "start": "babel-node buildScripts/srcServer.js",
-    "open:src": "webpack-dev-server --hot --port 80",
-    "build:dev": "webpack --env dev --progress --profile --colors",
-    "build:prod": "webpack --env prod --progress --profile --colors",
+    "start": "cross-env NODE_ENV=development  node ./buildScripts",
+    "build": "cross-env NODE_ENV=production webpack --config ./webpack",
+    "prod": "cross-env NODE_ENV=production  node ./buildScripts",
     "test": "set NODE_ENV=test&&jest --verbose",
     "test:watch": "npm test --watch",
     "test:coverage": "npm run test -- --coverage",
@@ -43,15 +42,17 @@
   "homepage": "https://github.com/nkorczyk/ReactJSTraining#readme",
   "dependencies": {
     "classnames": "^2.2.6",
+    "cross-env": "^5.1.6",
     "express": "^4.16.4",
     "materialize-css": "^1.0.0-rc.2",
     "react": "16.3.2",
     "react-dom": "16.3.3",
+    "react-hot-loader": "^4.2.0",
     "react-redux": "^5.1.1",
     "react-router": "^4.3.1",
+    "react-router-config": "^4.4.0-beta.6",
     "react-router-dom": "^4.3.1",
     "redux": "^3.6.0",
-    "redux-logger": "^3.0.6",
     "redux-persist": "^5.10.0",
     "redux-thunk": "^2.3.0"
   },
@@ -67,6 +68,7 @@
     "babel-preset-stage-2": "6.24.1",
     "css-loader": "0.28.11",
     "cypress": "^3.1.3",
+    "clean-webpack-plugin": "^0.1.19",
     "enzyme": "^3.8.0",
     "enzyme-adapter-react-16": "^1.7.1",
     "enzyme-to-json": "^3.3.5",
@@ -77,6 +79,9 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^23.6.0",
     "moxios": "^0.4.0",
+    "mini-css-extract-plugin": "^0.4.0",
+    "nodemon": "^1.18.9",
+    "npm-run-all": "^4.1.5",
     "open": "0.0.5",
     "react-test-renderer": "^16.6.3",
     "redux-mock-store": "^1.5.3",
@@ -84,6 +89,11 @@
     "url-loader": "^1.1.2",
     "webpack": "4.6.0",
     "webpack-cli": "2.0.14",
-    "webpack-dev-server": "^3.1.14"
+    "webpack-dev-server": "^3.1.14",
+    "webpack-dev-middleware": "^3.1.3",
+    "webpack-hot-middleware": "^2.22.2",
+    "webpack-hot-server-middleware": "^0.5.0",
+    "webpack-merge": "^4.1.2",
+    "webpack-node-externals": "^1.7.2"
   }
 }
