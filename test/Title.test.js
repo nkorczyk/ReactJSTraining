@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import Title from "../src/components/Title";
+import Title from '../src/components/Title';
 
 describe('should render Title component', () => {
   const element = mount(<Title />);

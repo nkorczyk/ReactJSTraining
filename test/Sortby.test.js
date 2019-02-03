@@ -5,7 +5,7 @@ describe('Sortby reducer', () => {
   it('should return the expected state', () => {
     const mock = {
       type: ACTION_TYPES.SORT_MOVIES,
-      sortby: 'RATING'
+      sortby: 'RATING',
     };
     const expectedState = 'RATING';
 
@@ -15,7 +15,7 @@ describe('Sortby reducer', () => {
   it('should return the expected state when default state is undefined', () => {
     const mock = {
       type: ACTION_TYPES.SORT_MOVIES,
-      sortby: 'RATING'
+      sortby: 'RATING',
     };
     const expectedState = 'RATING';
 

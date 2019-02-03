@@ -1,12 +1,12 @@
 module.exports = {
   search: {
-    searchby: "TITLE",
-    phrase: ""
+    searchby: 'TITLE',
+    phrase: '',
   },
-  sortby: "DATE",
+  sortby: 'DATE',
   movies: {
     data: [],
     status: null,
-    selectedMovie: null
-  }
+    selectedMovie: null,
+  },
 };

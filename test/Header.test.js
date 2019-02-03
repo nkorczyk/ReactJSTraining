@@ -1,12 +1,13 @@
 import React from 'react';
-import { shallow, mount } from 'enzyme';
-import { Header } from "../src/components/Header";
+import { shallow } from 'enzyme';
+import { Header } from '../src/components/Header';
 
 describe('Header', () => {
   it('should render Header component', () => {
     const component = shallow(
       <Header searchby={'TITLE'}
-        handleSearchByClick={jest.fn()} />);
+        handleSearchByClick={jest.fn()} />,
+    );
     expect(component).toMatchSnapshot();
   });
 });
@@ -16,8 +17,8 @@ it('should call prop searchMovieChange method', () => {
   const spySearchMovieChange = jest.fn();
   const eventMock = {
     target: {
-      value: 'test'
-    }
+      value: 'test',
+    },
   };
 
   const instance = shallow(<Header
@@ -32,8 +33,8 @@ it('should call prop searchBy method', () => {
   const spyOnSearch = jest.fn();
   const eventMock = {
     target: {
-      value: 'test'
-    }
+      value: 'test',
+    },
   };
 
   const instance = shallow(<Header

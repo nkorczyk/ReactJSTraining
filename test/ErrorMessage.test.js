@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import ErrorMessage from "../src/components/ErrorMessage";
+import ErrorMessage from '../src/components/ErrorMessage';
 
 describe('should render ErrorMessage component', () => {
   const element = shallow(<ErrorMessage message="Test message" />);

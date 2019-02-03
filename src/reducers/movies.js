@@ -6,33 +6,33 @@ function movies(state = initialState.movies, action) {
     case ACTION_TYPES.LOAD_MOVIES:
       return {
         ...state,
-        status: ACTION_TYPES.LOAD_MOVIES
+        status: ACTION_TYPES.LOAD_MOVIES,
       };
     case ACTION_TYPES.LOAD_MOVIES_SUCCESS:
       return {
         ...state,
         data: action.movies,
-        status: ACTION_TYPES.LOAD_MOVIES_SUCCESS
+        status: ACTION_TYPES.LOAD_MOVIES_SUCCESS,
       };
     case ACTION_TYPES.LOAD_MOVIES_ERROR:
       return {
         data: [],
-        status: ACTION_TYPES.LOAD_MOVIES_ERROR
+        status: ACTION_TYPES.LOAD_MOVIES_ERROR,
       };
     case ACTION_TYPES.SELECT_MOVIE:
       return {
         ...state,
-        selectedMovie: action.movie
+        selectedMovie: action.movie,
       };
     case ACTION_TYPES.LOAD_MOVIE_DETAILS_SUCCESS:
       return {
         ...state,
-        selectedMovie: action.movie.data
+        selectedMovie: action.movie.data,
       };
     case ACTION_TYPES.LOAD_MOVIES_SIMILAR_GENRE:
       return {
         ...state,
-        data: action.movies.data.data
+        data: action.movies.data.data,
       };
     default:
       return state;

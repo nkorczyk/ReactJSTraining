@@ -5,10 +5,10 @@ describe('Search reducer', () => {
   it('should return the expected state', () => {
     const mock = {
       type: ACTION_TYPES.SEARCH_BY,
-      searchby: 'TITLE'
+      searchby: 'TITLE',
     };
     const expectedState = {
-      searchby: 'TITLE'
+      searchby: 'TITLE',
     };
 
     expect(search({}, mock)).toStrictEqual(expectedState);
@@ -17,10 +17,10 @@ describe('Search reducer', () => {
   it('should return the expected state', () => {
     const mock = {
       type: ACTION_TYPES.SEARCH_MOVIE_CHANGE,
-      phrase: 'TITLE'
+      phrase: 'TITLE',
     };
     const expectedState = {
-      phrase: 'TITLE'
+      phrase: 'TITLE',
     };
 
     expect(search({}, mock)).toStrictEqual(expectedState);
@@ -29,13 +29,13 @@ describe('Search reducer', () => {
   it('should return the default state when action type is invalid', () => {
     const mock = {
       type: 'WRONG_TYPE',
-      phrase: 'FIFTY'
+      phrase: 'FIFTY',
     };
     const expectedState = {
       search: {
         searchby: 'TITLE',
-        phrase: ''
-      }
+        phrase: '',
+      },
     };
 
     expect(search(expectedState, mock)).toStrictEqual(expectedState);
@@ -44,11 +44,11 @@ describe('Search reducer', () => {
   it('should return the expected state when default state is undefined', () => {
     const mock = {
       type: ACTION_TYPES.SEARCH_MOVIE_CHANGE,
-      phrase: 'FIFTY'
+      phrase: 'FIFTY',
     };
     const expectedState = {
       phrase: 'FIFTY',
-      searchby: 'TITLE'
+      searchby: 'TITLE',
     };
 
     expect(search(undefined, mock)).toStrictEqual(expectedState);

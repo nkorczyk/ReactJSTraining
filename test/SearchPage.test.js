@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import SearchPage from "../src/components/SearchPage";
+import SearchPage from '../src/components/SearchPage';
 import movies from '../mocks/movies';
 
 describe('should render SearchPage component', () => {

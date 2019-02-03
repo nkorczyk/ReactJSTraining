@@ -11,27 +11,25 @@ import {
   loadMoviesError,
   loadMoviesRequest,
   buildUrl,
-  loadMovies
+  loadMovies,
 } from '../src/actions/actionCreator';
 
 const middlewares = [thunk];
 const mockStore = configureMockStore(middlewares);
 const mockSuccess = response => ({
   status: 200,
-  response
+  response,
 });
-const buildMockStore = (state = initialState) => {
-  return mockStore(
-    state
-  );
-};
+const buildMockStore = (state = initialState) => mockStore(
+  state,
+);
 
 describe('Action creator', () => {
   it('should create an action to search by movies', () => {
     const searchby = 'TITLE';
     const expectedAction = {
       type: ACTION_TYPES.SEARCH_BY,
-      searchby
+      searchby,
     };
 
     expect(searchBy('TITLE')).toEqual(expectedAction);
@@ -41,7 +39,7 @@ describe('Action creator', () => {
     const sortby = 'RATING';
     const expectedAction = {
       type: ACTION_TYPES.SORT_MOVIES,
-      sortby
+      sortby,
     };
 
     expect(sortMovies('RATING')).toEqual(expectedAction);
@@ -49,7 +47,7 @@ describe('Action creator', () => {
 
   it('should create an action to load movies', () => {
     const expectedAction = {
-      type: ACTION_TYPES.LOAD_MOVIES
+      type: ACTION_TYPES.LOAD_MOVIES,
     };
 
     expect(loadMoviesRequest()).toEqual(expectedAction);
@@ -58,16 +56,16 @@ describe('Action creator', () => {
   it('should create an action to when search phrase changed', () => {
     const mock = {
       data: {
-        "data": ["f"]
-      }
+        data: ['f'],
+      },
     };
     const expectedAction = {
       type: ACTION_TYPES.SEARCH_MOVIE_CHANGE,
       phrase: {
-        "data": {
-          "data": ["f"]
-        }
-      }
+        data: {
+          data: ['f'],
+        },
+      },
     };
 
     expect(searchMovieChange(mock)).toEqual(expectedAction);
@@ -76,12 +74,12 @@ describe('Action creator', () => {
   it('should create an action when loading movies succeed', () => {
     const mock = {
       data: {
-        data: ['fifty', 'wars', 'dragon']
-      }
+        data: ['fifty', 'wars', 'dragon'],
+      },
     };
     const expectedAction = {
       type: ACTION_TYPES.LOAD_MOVIES_SUCCESS,
-      movies: ['fifty', 'wars', 'dragon']
+      movies: ['fifty', 'wars', 'dragon'],
     };
 
     expect(loadMoviesSuccess(mock)).toEqual(expectedAction);
@@ -91,7 +89,7 @@ describe('Action creator', () => {
     const mock = 'error';
     const expectedAction = {
       type: ACTION_TYPES.LOAD_MOVIES_ERROR,
-      error: mock
+      error: mock,
     };
 
     expect(loadMoviesError(mock)).toEqual(expectedAction);
@@ -108,8 +106,8 @@ describe('Action creator', () => {
     const store = buildMockStore();
     const response = {
       data: {
-        data: ['test']
-      }
+        data: ['test'],
+      },
     };
 
     moxios.wait(() => {
@@ -119,7 +117,7 @@ describe('Action creator', () => {
 
     const expected = [
       loadMoviesRequest(),
-      loadMoviesSuccess(response)
+      loadMoviesSuccess(response),
     ];
 
     return store.dispatch(loadMovies())
@@ -136,13 +134,13 @@ describe('Action creator', () => {
       const request = moxios.requests.mostRecent();
       request.respondWith({
         status: 500,
-        error: 'error'
+        error: 'error',
       });
     });
 
     const expected = [
       loadMoviesRequest(),
-      loadMoviesError('error')
+      loadMoviesError('error'),
     ];
 
     return store.dispatch(loadMovies())

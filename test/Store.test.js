@@ -1,5 +1,5 @@
-import initialState from '../src/reducers/initialState';
 import configureMockStore from 'redux-mock-store';
+import initialState from '../src/reducers/initialState';
 
 const mockStore = configureMockStore();
 
@@ -7,7 +7,7 @@ describe('Store', () => {
   const store = mockStore({ ...initialState });
   it('should have a getState method that will restore the default state', () => {
     const expectedState = {
-      ...initialState
+      ...initialState,
     };
     expect(store.getState()).toEqual(expectedState);
   });

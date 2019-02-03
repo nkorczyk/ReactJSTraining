@@ -1,69 +1,67 @@
 import axios from 'axios';
-import ACTION_TYPES from '../actions/types';
-import { baseURL } from '../constants/baseURL';
+import ACTION_TYPES from './types';
+import baseURL from '../constants/baseURL';
 
-export const searchBy = (searchby) => ({
+export const searchBy = searchby => ({
   type: ACTION_TYPES.SEARCH_BY,
-  searchby
+  searchby,
 });
 
-export const sortMovies = (sortby) => ({
+export const sortMovies = sortby => ({
   type: ACTION_TYPES.SORT_MOVIES,
-  sortby
+  sortby,
 });
 
-export const searchMovieChange = (phrase) => ({
+export const searchMovieChange = phrase => ({
   type: ACTION_TYPES.SEARCH_MOVIE_CHANGE,
-  phrase
+  phrase,
 });
 
 export const loadMoviesSuccess = (response) => {
   const movies = response.data.data;
   return ({
     type: ACTION_TYPES.LOAD_MOVIES_SUCCESS,
-    movies
+    movies,
   });
 };
 
-export const loadMoviesError = (error) => ({
+export const loadMoviesError = error => ({
   type: ACTION_TYPES.LOAD_MOVIES_ERROR,
-  error
+  error,
 });
 
 export const loadMoviesRequest = () => ({
-  type: ACTION_TYPES.LOAD_MOVIES
+  type: ACTION_TYPES.LOAD_MOVIES,
 });
 
-export const selectMovie = (movie) => ({
+export const selectMovie = movie => ({
   type: ACTION_TYPES.SELECT_MOVIE,
-  movie
+  movie,
 });
 
-export const persistLastSearchPhrase = (lastSearchPhrase) => {
-  return ({
-    type: ACTION_TYPES.PERSIST_LAST_SEARCH_PHRASE,
-    lastSearchPhrase
-  });
-};
+export const persistLastSearchPhrase = lastSearchPhrase => ({
+  type: ACTION_TYPES.PERSIST_LAST_SEARCH_PHRASE,
+  lastSearchPhrase,
+});
 
-export const loadMovieDetailsSuccess = (movie) => ({
+export const loadMovieDetailsSuccess = movie => ({
   type: ACTION_TYPES.LOAD_MOVIE_DETAILS_SUCCESS,
-  movie
+  movie,
 });
 
-export const loadMovieSimilarGenre = (movies) => ({
+export const loadMovieSimilarGenre = movies => ({
   type: ACTION_TYPES.LOAD_MOVIES_SIMILAR_GENRE,
-  movies
+  movies,
 });
 
-export const buildUrl = (searchBy, phrase) => {
-  const searchByTitleOrGenre = `&searchBy=${searchBy === "title" ? "title" : "genres"}`;
+export const buildUrl = (searchby, phrase) => {
+  const searchByTitleOrGenre = `&searchBy=${searchby === 'title' ? 'title' : 'genres'}`;
   const searchPhrase = `?search=${phrase}`;
-  const order = "&sortOrder=desc";
-  const limit = "&limit=15";
+  const order = '&sortOrder=desc';
+  const limit = '&limit=15';
 
   return `${baseURL}${searchPhrase}${searchByTitleOrGenre}${order}${limit}`;
-}
+};
 
 export const loadMovies = () => (dispatch, getState) => {
   dispatch(loadMoviesRequest());
@@ -71,38 +69,38 @@ export const loadMovies = () => (dispatch, getState) => {
   const url = buildUrl(search.searchby, search.lastSearchPhrase);
 
   return axios.get(url)
-    .then(response => {
-      dispatch(loadMoviesSuccess(response))
+    .then((response) => {
+      dispatch(loadMoviesSuccess(response));
     })
-    .catch(error => {
-      dispatch(loadMoviesError(error))
+    .catch((error) => {
+      dispatch(loadMoviesError(error));
     });
 };
 
-export const searchMovies = (phrase) => (dispatch, getState) => {
-  const url = buildUrl("title", phrase);
+export const searchMovies = phrase => (dispatch) => {
+  const url = buildUrl('title', phrase);
   return axios.get(url)
-    .then(response => {
-      dispatch(loadMoviesSuccess(response))
+    .then((response) => {
+      dispatch(loadMoviesSuccess(response));
     })
-    .catch(error => {
-      dispatch(loadMoviesError(error))
+    .catch((error) => {
+      dispatch(loadMoviesError(error));
     });
 };
 
-export const getMovie = (id) => (dispatch) => {
+export const getMovie = id => (dispatch) => {
   const url = `${baseURL}/${id}`;
   return axios.get(url)
-    .then(movie => {
+    .then((movie) => {
       dispatch(loadMovieDetailsSuccess(movie));
       const genre = movie.data.genres[0];
       return genre;
     })
-    .then(genre => {
+    .then((genre) => {
       const urlByGenre = buildUrl('genres', genre);
       return axios.get(urlByGenre);
     })
-    .then(moviesbyGenre => {
+    .then((moviesbyGenre) => {
       dispatch(loadMovieSimilarGenre(moviesbyGenre));
     });
 };
