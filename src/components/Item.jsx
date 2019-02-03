@@ -1,6 +1,7 @@
 // @flow
 import React from 'react';
 import { Link } from "react-router-dom";
+import styled from 'styled-components';
 
 type Props = {
     movie: {
@@ -13,6 +14,31 @@ type Props = {
     }
 }
 
+const Thumbnails = styled.img`
+  display: block;
+  width: 256px;
+  cursor: pointer;
+`;
+
+const MovieTitle = styled.span`
+  float: left;
+  font-size: 10px;
+  font-weight: bold;
+  padding: 2px 2px;
+`;
+
+const ReleaseDate = styled.span`
+  float: right;
+  font-size: 10px;
+  padding: 0px 1px;
+  margin-top: 1px;
+  border: 1px solid #000;
+`;
+
+const Genre = styled.span`
+  font-size: 10px;
+`;
+
 const Item = (props: Props) => {
 
   const { id, poster_path, overview, title, release_date } = props.movie;
@@ -21,13 +47,13 @@ const Item = (props: Props) => {
   return (
     <div>
       <Link to={`/film/${id}`}>
-        <img src={poster_path} className="thumbnails" alt={overview} />
+        <Thumbnails src={poster_path} alt={overview} />
       </Link>
       <div className="details">
-        <span className="movie-title">{title.toUpperCase()}</span>
-        <span className="release-date">{release_date}</span>
+        <MovieTitle>{title.toUpperCase()}</MovieTitle>
+        <ReleaseDate>{release_date}</ReleaseDate>
       </div>
-      <span className="genre">{genres}</span>
+      <Genre>{genres}</Genre>
     </div>
   )
 }

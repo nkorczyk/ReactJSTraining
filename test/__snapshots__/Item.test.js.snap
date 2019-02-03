@@ -6,30 +6,23 @@ exports[`should render Item component Snapshot test with default props 1`] = `
     replace={false}
     to="/film/321612"
   >
-    <img
+    <styled.img
       alt="A live-action adaptation of Disney's version"
-      className="thumbnails"
       src="https://image.tmdb.org/t/p/w500/tWqifoYuwLETmmasnGHO7xBjEtt.jpg"
     />
   </Link>
   <div
     className="details"
   >
-    <span
-      className="movie-title"
-    >
+    <styled.span>
       BEAUTY AND THE BEAST
-    </span>
-    <span
-      className="release-date"
-    >
+    </styled.span>
+    <styled.span>
       2017-03-16
-    </span>
+    </styled.span>
   </div>
-  <span
-    className="genre"
-  >
+  <styled.span>
     Family & Fantasy & Romance
-  </span>
+  </styled.span>
 </div>
 `;

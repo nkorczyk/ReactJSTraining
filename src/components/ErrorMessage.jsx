@@ -1,14 +1,27 @@
 // @flow
 import React from 'react';
+import styled from 'styled-components';
 
 type Props = {
   message: string,
 }
 
+const NotFoundContainer = styled.div`
+  background: #fff;
+  margin: 0 auto;
+  max-width: 800px;
+  max-height: 200px;
+`;
+
+const NotFoundMessage = styled.h3`
+  padding: 80px;
+  margin: 0 auto;
+`;
+
 const ErrorMessage = ({ message }: Props) => (
-  <div className="not-found">
-    <h3 className="not-found-message">{message}</h3>
-  </div>
+  <NotFoundContainer>
+    <NotFoundMessage>{message}</NotFoundMessage>
+  </NotFoundContainer>
 );
 
 export default ErrorMessage;

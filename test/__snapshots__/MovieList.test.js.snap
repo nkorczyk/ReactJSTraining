@@ -1,9 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`MoviesList should rendered correctly with 5 movies 1`] = `
-<div
-  className="movies-list"
->
+<styled.div>
   <Item
     key="337167"
     movie={
@@ -120,11 +118,7 @@ exports[`MoviesList should rendered correctly with 5 movies 1`] = `
       }
     }
   />
-</div>
+</styled.div>
 `;
 
-exports[`MoviesList should rendered correctly without any movie 1`] = `
-<div
-  className="movies-list"
-/>
-`;
+exports[`MoviesList should rendered correctly without any movie 1`] = `<styled.div />`;
