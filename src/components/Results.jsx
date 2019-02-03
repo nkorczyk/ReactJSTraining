@@ -1,13 +1,18 @@
+// @flow
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { sortMovies } from '../actions/actionCreator';
 import CONSTANTS from '../constants/constants';
 
-class Results extends Component {
+type Props = {
+  movieCount: number,
+  sortMovies: Function,
+}
 
-  handleClick = (event) => {
-    this.props.sortMovies(event.target.id);
+class Results extends Component<Props> {
+
+  handleClick = (event : SyntheticEvent<HTMLButtonElement>) => {
+    this.props.sortMovies((event.target: window.HTMLButtonElement).id);
   };
 
   render() {
@@ -24,11 +29,6 @@ class Results extends Component {
     )
   }
 }
-
-Results.propTypes = {
-  movieCount: PropTypes.number,
-  sortMovies: PropTypes.func
-};
 
 const mapStateToProps = (state) => ({
   movieCount: state.movies.data.length,

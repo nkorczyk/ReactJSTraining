@@ -22,17 +22,21 @@
     "global-require": 0,
     "no-console": "off",
     "import/no-named-as-default": 0,
-    "import/no-unresolved": "off"
+    "import/no-unresolved": "off",
+    "flowtype/define-flow-type": 1,
+    "flowtype/use-flow-type": 1
   },
   "extends": [
     "airbnb-base",
     "eslint:recommended",
-    "plugin:react/recommended"
+    "plugin:react/recommended",
+    "plugin:flowtype/recommended"
   ],
   "plugins": [
     "import",
     "react",
-    "jsx-a11y"
+    "jsx-a11y",
+    "flowtype"
   ],
   "env": {
     "browser": true,

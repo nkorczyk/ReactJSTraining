@@ -1,13 +1,23 @@
+// @flow
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import CONSTANTS from '../constants/constants';
 import { Link, withRouter } from "react-router-dom";
 import { connect } from 'react-redux';
 import { getMovie } from '../actions/actionCreator';
 
-class MovieDetails extends Component {
+type Props = {
+  selectedMovie: Object,
+  getMovie: Function,
+  match: {
+    params: {
+      id: string
+    }
+  },
+}
 
-  static fetchData(dispatch, match) {
+class MovieDetails extends Component<Props> {
+
+  static fetchData(dispatch: Function, match: Object) {
     return dispatch(getMovie(match.params.id));
   }
 
@@ -50,10 +60,6 @@ class MovieDetails extends Component {
     )
   }
 }
-
-MovieDetails.propTypes = {
-  selectedMovie: PropTypes.object
-};
 
 const mapDispatchToProps = { getMovie };
 

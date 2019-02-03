@@ -1,16 +1,28 @@
+// @flow
 import React, { Component } from 'react';
 import classNames from 'classnames';
 import Title from './Title';
 import CONSTANTS from '../constants/constants';
 import { loadMovies, searchBy, searchMovieChange, persistLastSearchPhrase } from '../actions/actionCreator';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
 
-class Header extends Component {
+type Props = {
+  activeSearch: string,
+  phrase: string,
+  onSearch: Function,
+  loadMovies: Function,
+  searchMovieChange: Function,
+  persistLastSearchPhrase: Function,
+}
 
-  handleSearchByClick = (event) => {
-    this.props.onSearch(event.target.id);
+class Header extends Component<Props> {
+  static defaultProps = {
+    onSearch: () => { },
+  }
+
+  handleSearchByClick = (event : SyntheticEvent<HTMLButtonElement>) => {
+    this.props.onSearch((event.target: window.HTMLButtonElement).id);
   }
 
   handleSearch = () => {
@@ -18,8 +30,8 @@ class Header extends Component {
     this.props.loadMovies();
   }
 
-  handleChange = (event) => {
-    this.props.searchMovieChange(event.target.value);
+  handleChange = (event : SyntheticEvent<HTMLButtonElement>) => {
+    this.props.searchMovieChange((event.target: window.HTMLButtonElement).value);
   }
 
   render() {
@@ -56,17 +68,6 @@ class Header extends Component {
     )
   }
 }
-
-Header.propTypes = {
-  activeSearch: PropTypes.string,
-  onSearch: PropTypes.func,
-  loadMovies: PropTypes.func,
-  searchMovieChange: PropTypes.func,
-};
-
-Header.defaultProps = {
-  onSearch: () => { },
-};
 
 const mapStateToProps = (state) => ({
   activeSearch: state.search.searchby,

@@ -1,8 +1,19 @@
+// @flow
 import React from 'react';
-import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
 
-const Item = (props) => {
+type Props = {
+    movie: {
+      id: string,
+      poster_path: string,
+      release_date: string,
+      overview: string,
+      title: string,
+      genres: Array<string>,
+    }
+}
+
+const Item = (props: Props) => {
 
   const { id, poster_path, overview, title, release_date } = props.movie;
   const genres = props.movie.genres.join(" & ");
@@ -20,9 +31,5 @@ const Item = (props) => {
     </div>
   )
 }
-
-Item.propTypes = {
-  movie: PropTypes.object
-};
 
 export default Item;

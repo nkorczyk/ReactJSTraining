@@ -1,13 +1,20 @@
+// @flow
 import React, { Component } from 'react';
 import { hot } from 'react-hot-loader';
-import PropTypes from 'prop-types';
 import SearchPage from './components/SearchPage';
 import MoviePage from './components/MoviePage';
 import NotFoundPage from "./components/NotFoundPage";
 import { Route, Switch } from "react-router-dom";
 import { Provider } from 'react-redux';
 
-const Root = ({ Router, location, context, store }) => (
+type Props = {
+  Router: Function,
+  location: string,
+  context: Object,
+  store: Object,
+}
+
+const Root = ({ Router, location, context, store }: Props) => (
   <Provider store={store}>
     <Router location={location} context={context}>
       <div>
@@ -21,18 +28,6 @@ const Root = ({ Router, location, context, store }) => (
     </Router>
   </Provider>
 );
-
-Root.propTypes = {
-  Router: PropTypes.func.isRequired,
-  location: PropTypes.string,
-  context: PropTypes.shape({
-    url: PropTypes.string,
-  }),
-  store: PropTypes.shape({
-    dispatch: PropTypes.func.isRequired,
-    getState: PropTypes.func.isRequired,
-  }).isRequired,
-};
 
 Root.defaultProps = {
   location: null,
