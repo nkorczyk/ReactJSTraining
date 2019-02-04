@@ -10,6 +10,7 @@ import styled from 'styled-components';
 type Props = {
   selectedMovie: Object,
   getMovie: Function,
+  movieDetails: Function,
   match: {
     params: {
       id: string
