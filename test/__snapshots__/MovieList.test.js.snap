@@ -1,9 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`MoviesList should rendered correctly with 5 movies 1`] = `
-<div
-  className="movies-list"
->
+<styled.div>
   <Item
     key="337167"
     movie={
@@ -14,7 +12,7 @@ exports[`MoviesList should rendered correctly with 5 movies 1`] = `
           "Romance",
         ],
         "id": 337167,
-        "overview": "Believing they have left behind shadowy figures from their past, newlyweds Christian and Ana fully embrace an inextricable connection and shared life of luxury. But just as she steps into her role as Mrs. Grey and he relaxes into an unfamiliar stability, new threats could jeopardize their happy ending before it even begins.",
+        "overview": "Believing they have left behind shadowy figures from their past.",
         "poster_path": "https://image.tmdb.org/t/p/w500/3kcEGnYBHDeqmdYf8ZRbKdfmlUy.jpg",
         "release_date": "2018-02-07",
         "revenue": 136906000,
@@ -38,7 +36,7 @@ exports[`MoviesList should rendered correctly with 5 movies 1`] = `
           "Comedy",
         ],
         "id": 269149,
-        "overview": "Determined to prove herself, Officer Judy Hopps, the first bunny on Zootopia's police force, jumps at the chance to crack her first case - even if it means partnering with scam-artist fox Nick Wilde to solve the mystery.",
+        "overview": "Determined to prove herself, Officer Judy Hopps, the first bunny on Zootopia's police force.",
         "poster_path": "https://image.tmdb.org/t/p/w500/sM33SANp9z6rXW8Itn7NnG1GOEs.jpg",
         "release_date": "2016-02-11",
         "revenue": 1023784195,
@@ -61,7 +59,7 @@ exports[`MoviesList should rendered correctly with 5 movies 1`] = `
           "Science Fiction",
         ],
         "id": 181808,
-        "overview": "Rey develops her newly discovered abilities with the guidance of Luke Skywalker, who is unsettled by the strength of her powers. Meanwhile, the Resistance prepares to do battle with the First Order.",
+        "overview": "Rey develops her newly discovered abilities with the guidance of Luke Skywalker.",
         "poster_path": "https://image.tmdb.org/t/p/w500/kOVEVeg59E0wsnXmF9nrh6OmWII.jpg",
         "release_date": "2017-12-13",
         "revenue": 1325937250,
@@ -85,7 +83,7 @@ exports[`MoviesList should rendered correctly with 5 movies 1`] = `
           "Science Fiction",
         ],
         "id": 284054,
-        "overview": "King T'Challa returns home from America to the reclusive, technologically advanced African nation of Wakanda to serve as his country's new leader. However, T'Challa soon finds that he is challenged for the throne by factions within his own country as well as without.  Using powers reserved to Wakandan kings, T'Challa assumes the Black Panther mantel to join with girlfriend Nakia, the queen-mother, his princess-kid sister,  members of the Dora Milaje (the Wakandan \\"special forces\\"), and an American secret agent, to prevent Wakanda from being dragged into a world war.",
+        "overview": "King T'Challa returns home from America to the reclusive, technologically advanced African.",
         "poster_path": "https://image.tmdb.org/t/p/w500/uxzzxijgPIY7slzFvMotPv8wjKA.jpg",
         "release_date": "2018-02-13",
         "revenue": 1245257672,
@@ -108,7 +106,7 @@ exports[`MoviesList should rendered correctly with 5 movies 1`] = `
           "Romance",
         ],
         "id": 399055,
-        "overview": "An other-worldly story, set against the backdrop of Cold War era America circa 1962, where a mute janitor working at a lab falls in love with an amphibious man being held captive there and devises a plan to help him escape.",
+        "overview": "An other-worldly story, set against the backdrop of Cold War era America circa 1962.",
         "poster_path": "https://image.tmdb.org/t/p/w500/k4FwHlMhuRR5BISY2Gm2QZHlH5Q.jpg",
         "release_date": "2017-12-01",
         "revenue": 185545281,
@@ -120,11 +118,7 @@ exports[`MoviesList should rendered correctly with 5 movies 1`] = `
       }
     }
   />
-</div>
+</styled.div>
 `;
 
-exports[`MoviesList should rendered correctly without any movie 1`] = `
-<div
-  className="movies-list"
-/>
-`;
+exports[`MoviesList should rendered correctly without any movie 1`] = `<styled.div />`;

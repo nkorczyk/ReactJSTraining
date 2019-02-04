@@ -1,19 +1,19 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Root from "../src/Root";
 import configureMockStore from 'redux-mock-store';
+import Root from '../src/Root';
 import movies from '../mocks/movies';
 
 const initialState = {
   search: {
     searchby: 'TITLE',
-    phrase: ''
+    phrase: '',
   },
   sortby: 'DATE',
   movies: {
     data: movies.data,
-    status: 'LOAD_MOVIES_SUCCESS'
-  }
+    status: 'LOAD_MOVIES_SUCCESS',
+  },
 };
 
 const mockStore = configureMockStore();
@@ -25,7 +25,7 @@ describe('Root', () => {
     const component = shallow(
       <Root
         store={store}
-        Router={mockRouter} />
+        Router={mockRouter} />,
     );
     expect(component).toMatchSnapshot();
   });

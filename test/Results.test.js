@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount, shallow, render } from 'enzyme';
-import { Results } from "../src/components/Results";
+import { Results } from '../src/components/Results';
 
 describe('Results', () => {
   describe('should render Results component', () => {
@@ -12,7 +12,7 @@ describe('Results', () => {
 
   describe('should display 10 movies found', () => {
     const element = mount(<Results movieCount={10} />);
-    expect(element.find('#moviesFound').text()).toEqual("10 movies found");
+    expect(element.find('#moviesFound').text()).toEqual('10 movies found');
   });
 
   describe('should call prop searchBy method', () => {
@@ -20,8 +20,8 @@ describe('Results', () => {
     const spySortMovies = jest.fn();
     const eventMock = {
       target: {
-        value: 'test'
-      }
+        value: 'test',
+      },
     };
 
     const instance = shallow(<Results

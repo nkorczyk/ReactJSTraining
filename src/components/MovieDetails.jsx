@@ -1,13 +1,73 @@
+// @flow
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import CONSTANTS from '../constants/constants';
 import { Link, withRouter } from "react-router-dom";
 import { connect } from 'react-redux';
 import { getMovie } from '../actions/actionCreator';
+import SelectedMovieSelector from '../selectors/SelectedMovieSelector';
+import styled from 'styled-components';
 
-class MovieDetails extends Component {
+type Props = {
+  selectedMovie: Object,
+  getMovie: Function,
+  movieDetails: Function,
+  match: {
+    params: {
+      id: string
+    }
+  },
+}
 
-  static fetchData(dispatch, match) {
+const MovieHeader = styled.div`
+  padding: 5px 5px;
+  & > h5 {
+    display: inline;
+  }
+`;
+
+const MoviePoster = styled.div`
+  display: inline-block;
+`;
+
+const Poster = styled.img`
+  display: block;
+  width: 170px;
+`;
+
+const MovieDetail = styled.div`
+  float: right;
+  margin: 0 auto;
+  width: 500px;
+
+  & > h3 {
+    text-align: left;
+    margin: 0px;
+  }
+
+  & > span {
+    padding-right: 5px;
+  }
+`;
+
+const TitleDetails = styled.h3`
+  display: inline;
+`;
+
+const AverageRating = styled.h5`
+  display: inline;
+  border: 1px solid white;
+  border-radius: 30px;
+  padding: 3px 7px;
+  margin-left: 5px;
+`;
+
+const Overview = styled.p`
+  font-size: 11px;
+`;
+
+class MovieDetails extends Component<Props> {
+
+  static fetchData(dispatch: Function, match: Object) {
     return dispatch(getMovie(match.params.id));
   }
 
@@ -22,26 +82,26 @@ class MovieDetails extends Component {
   }
 
   render() {
-    const movie = this.props.selectedMovie ? this.props.selectedMovie : null;
+    const movie = this.props.movieDetails ? this.props.movieDetails[0] : null;
     const MovieDetails = movie ? (
       <div className="movie-wrapper">
-        <div className="movie-header">
+        <MovieHeader>
           <h5 className="red-text text-darken-2">{CONSTANTS.NETFLIX}</h5>
           <Link to={'/'}>
             <button className="red lighten-1 btn right">{CONSTANTS.SEARCH}</button>
           </Link>
-        </div>
-        <div className="movie-poster">
-          <img className="thumbnails-details" src={movie.poster_path} />
-        </div>
-        <div className="movie-detail">
-          <h3 className="red-text text-darken-2 title-details">{movie.title}</h3>
-          <h5 className="white-text text-darken-2 avg-rating">{movie.vote_average}</h5>
+        </MovieHeader>
+        <MoviePoster>
+          <Poster src={movie.poster_path} />
+        </MoviePoster>
+        <MovieDetail>
+          <TitleDetails className="red-text text-darken-2">{movie.title}</TitleDetails>
+          <AverageRating className="white-text text-darken-2">{movie.vote_average}</AverageRating>
           <p className="white-text text-darken-2">{movie.genres.join(" & ")}</p>
           <span className="white-text text-darken-2">{movie.release_date}</span>
           <span className="white-text text-darken-2">{movie.runtime + "min"}</span>
-          <p className="white-text text-darken-2 overview">{movie.overview}</p>
-        </div>
+          <Overview className="white-text text-darken-2 overview">{movie.overview}</Overview>
+        </MovieDetail>
       </div>
     ) : null;
 
@@ -51,14 +111,11 @@ class MovieDetails extends Component {
   }
 }
 
-MovieDetails.propTypes = {
-  selectedMovie: PropTypes.object
-};
-
 const mapDispatchToProps = { getMovie };
 
 const mapStateToProps = (state) => ({
   selectedMovie: state.movies.selectedMovie,
+  movieDetails: SelectedMovieSelector(state),
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(MovieDetails));

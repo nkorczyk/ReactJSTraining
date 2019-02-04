@@ -1,14 +1,25 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+// @flow
+import * as React from 'react';
 import MoviesList from './MoviesList';
 import ErrorMessage from './ErrorMessage';
 import CONSTANTS from '../constants/constants';
 import { connect } from 'react-redux';
 import { searchMovies } from '../actions/actionCreator';
 
-class Content extends Component {
+type Props = {
+  movies: [],
+  sortby: string,
+  searchMovies: Function,
+  match: {
+    params: {
+      query: string
+    }
+  },
+}
 
-  static fetchData(dispatch, match) {
+class Content extends React.Component<Props> {
+
+  static fetchData(dispatch: Function, match: Object) {
     return dispatch(searchMovies(match.params.query));
   }
 
@@ -28,11 +39,6 @@ class Content extends Component {
     )
   }
 }
-
-Content.propTypes = {
-  movies: PropTypes.array,
-  sortby: PropTypes.string,
-};
 
 const selectSortedMovies = (state) => {
   const sortby = state.sortby;

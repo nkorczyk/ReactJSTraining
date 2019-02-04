@@ -2,14 +2,81 @@
 
 exports[`should render Footer component Snapshot test with default props 1`] = `
 <Footer>
-  <footer
-    className="bar"
-  >
-    <h5
-      className="red-text text-darken-2 grey darken-3 grey-bar"
+  <styled.footer>
+    <StyledComponent
+      forwardedComponent={
+        Object {
+          "$$typeof": Symbol(react.forward_ref),
+          "attrs": Array [],
+          "componentStyle": ComponentStyle {
+            "componentId": "sc-bdVaJa",
+            "isStatic": true,
+            "lastClassName": "ihYCKS",
+            "rules": Array [
+              "
+  margin: 0 auto;
+  max-width: 800px;
+  overflow: auto;
+",
+            ],
+          },
+          "displayName": "styled.footer",
+          "foldedComponentIds": Array [],
+          "render": [Function],
+          "styledComponentId": "sc-bdVaJa",
+          "target": "footer",
+          "toString": [Function],
+          "warnTooManyClasses": [Function],
+          "withComponent": [Function],
+        }
+      }
+      forwardedRef={null}
     >
-      netflixroulette
-    </h5>
-  </footer>
+      <footer
+        className="sc-bdVaJa ihYCKS"
+      >
+        <styled.h5
+          className="red-text text-darken-2 grey darken-3"
+        >
+          <StyledComponent
+            className="red-text text-darken-2 grey darken-3"
+            forwardedComponent={
+              Object {
+                "$$typeof": Symbol(react.forward_ref),
+                "attrs": Array [],
+                "componentStyle": ComponentStyle {
+                  "componentId": "sc-bwzfXH",
+                  "isStatic": true,
+                  "lastClassName": "cNIiOn",
+                  "rules": Array [
+                    "
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 15px 15px;
+",
+                  ],
+                },
+                "displayName": "styled.h5",
+                "foldedComponentIds": Array [],
+                "render": [Function],
+                "styledComponentId": "sc-bwzfXH",
+                "target": "h5",
+                "toString": [Function],
+                "warnTooManyClasses": [Function],
+                "withComponent": [Function],
+              }
+            }
+            forwardedRef={null}
+          >
+            <h5
+              className="red-text text-darken-2 grey darken-3 sc-bwzfXH cNIiOn"
+            >
+              netflixroulette
+            </h5>
+          </StyledComponent>
+        </styled.h5>
+      </footer>
+    </StyledComponent>
+  </styled.footer>
 </Footer>
 `;

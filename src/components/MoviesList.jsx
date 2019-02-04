@@ -1,15 +1,26 @@
+// @flow
 import React from 'react';
-import PropTypes from 'prop-types';
 import Item from './Item';
+import styled from 'styled-components';
 
-const MoviesList = ({ movies }) => (
-  <div className="movies-list">
+type Props = {
+  movies: []
+}
+
+const MoviesListContainer = styled.div`
+  display: grid;
+  grid-template-columns: 256px 256px 256px;
+  grid-gap: 10px;
+  background: #fff;
+  margin: 0 auto;
+  padding: 5px 5px;
+  max-width: 800px;
+`;
+
+const MoviesList = ({ movies }: Props) => (
+  <MoviesListContainer>
     {movies.map(movie => (<Item movie={movie} key={movie.id} />))}
-  </div>
+  </MoviesListContainer>
 );
-
-MoviesList.propTypes = {
-  movies: PropTypes.array
-};
 
 export default MoviesList;

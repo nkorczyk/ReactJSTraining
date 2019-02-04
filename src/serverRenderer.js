@@ -4,7 +4,7 @@ import { StaticRouter } from 'react-router-dom';
 import { matchRoutes } from 'react-router-config';
 import Root from './Root';
 import SearchPage from './components/SearchPage';
-import NotFoundPage from "./components/NotFoundPage";
+import NotFoundPage from './components/NotFoundPage';
 import configureStore from './actions/store';
 import MovieDetails from './components/MovieDetails';
 import Content from './components/Content';
@@ -13,7 +13,7 @@ const routes = [
   { path: '/', exact: true, component: SearchPage },
   { path: '/search/:query', exact: true, component: Content },
   { path: '/film/:id', exact: true, component: MovieDetails },
-  { path: '/*', component: NotFoundPage }
+  { path: '/*', component: NotFoundPage },
 ];
 
 function renderHTML(html, preloadedState) {
@@ -24,7 +24,9 @@ function renderHTML(html, preloadedState) {
           <meta charset=utf-8>
           <title>React Server Side Rendering</title>
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"></link>
-          ${process.env.NODE_ENV === 'development' ? '' : '<link href="/css/main.css" rel="stylesheet" type="text/css">'}
+          ${process.env.NODE_ENV === 'development'
+          ? ''
+          : '<link href="/css/main.css" rel="stylesheet" type="text/css">'}
         </head>
         <body>
         <div id="root">${html}</div>
@@ -71,5 +73,5 @@ export default function serverRenderer() {
 
         res.send(renderHTML(htmlString, preloadedState));
       });
-  }
+  };
 }

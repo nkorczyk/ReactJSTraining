@@ -1,13 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render ErrorMessage component Snapshot test with default props 1`] = `
-<div
-  className="not-found"
->
-  <h3
-    className="not-found-message"
-  >
+<styled.div>
+  <styled.h3>
     Test message
-  </h3>
-</div>
+  </styled.h3>
+</styled.div>
 `;
