@@ -4,6 +4,7 @@ import CONSTANTS from '../constants/constants';
 import { Link, withRouter } from "react-router-dom";
 import { connect } from 'react-redux';
 import { getMovie } from '../actions/actionCreator';
+import SelectedMovieSelector from '../selectors/SelectedMovieSelector';
 import styled from 'styled-components';
 
 type Props = {
@@ -80,7 +81,7 @@ class MovieDetails extends Component<Props> {
   }
 
   render() {
-    const movie = this.props.selectedMovie ? this.props.selectedMovie : null;
+    const movie = this.props.movieDetails ? this.props.movieDetails[0] : null;
     const MovieDetails = movie ? (
       <div className="movie-wrapper">
         <MovieHeader>
@@ -113,6 +114,7 @@ const mapDispatchToProps = { getMovie };
 
 const mapStateToProps = (state) => ({
   selectedMovie: state.movies.selectedMovie,
+  movieDetails: SelectedMovieSelector(state),
 });
 
 export default withRouter(connect(mapStateToProps, mapDispatchToProps)(MovieDetails));
