@@ -6,10 +6,9 @@
   "main": "script.js",
   "scripts": {
     "start": "cross-env NODE_ENV=development  node ./buildScripts",
-    "build:prod": "cross-env NODE_ENV=production webpack --config ./webpack",
+    "build": "cross-env NODE_ENV=production webpack --config ./webpack",
     "prod": "cross-env NODE_ENV=production  node ./buildScripts",
     "lint": "eslint ./ --cache --ignore-pattern .gitignore --fix",
-    "build": "babel src/ -d lib/",
     "prepublish": "npm run build",
     "flow": "flow",
     "test": "set NODE_ENV=test&&jest --verbose",

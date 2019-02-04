@@ -25,8 +25,8 @@ function renderHTML(html, preloadedState) {
           <title>React Server Side Rendering</title>
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"></link>
           ${process.env.NODE_ENV === 'development'
-      ? ''
-      : '<link href="/css/main.css" rel="stylesheet" type="text/css">'}
+          ? ''
+          : '<link href="/css/main.css" rel="stylesheet" type="text/css">'}
         </head>
         <body>
         <div id="root">${html}</div>

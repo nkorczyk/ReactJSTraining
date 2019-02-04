@@ -20,7 +20,6 @@
       }
     ],
     "global-require": 0,
-    "no-console": "off",
     "import/no-named-as-default": 0,
     "import/no-unresolved": "off",
     "flowtype/define-flow-type": 1,
